@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* styles/Home.module.css */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
