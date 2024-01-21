@@ -17,8 +17,10 @@ const Introduction = () => {
         <p className="text-lg mb-8 max-w-md mx-auto">High level experience in web design and development knowledge producing quality work.</p>
 
         {/* Call-to-action button */}
-        <Link href="#projects" className="bg-white text-black bold px-4 py-2 rounded-full inline-block shadow-md">View Projects
-        </Link>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">View Projects</button>
+
+        {/* <Link href="#projects" className="bg-white text-black bold px-4 py-2 rounded-full inline-block shadow-md">View Projects
+        </Link> */}
       </div>
 
       {/* Overlay for background image */}
