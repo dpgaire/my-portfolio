@@ -28,10 +28,10 @@ const Skills = () => {
   
 
   return (
-    <div className="bg-gray-600 pt-8 h-[300px]">
+    <div className="bg-gray-600 pt-8 pb-4">
     <section className="container mx-auto mt-8 ">
       <h2 className="text-2xl text-white font-bold mb-4">Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {skills.map((skill, index) => (
           <div key={index} className="bg-blue-500 text-white px-4 py-2 rounded-full text-center cursor-pointer hover:bg-blue-700 transition duration-300">
             {skill}

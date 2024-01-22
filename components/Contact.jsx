@@ -40,7 +40,7 @@ const Contact = () => {
 
         {/* Footer Section with Social Icons */}
         <div className="mt-8 text-center h-full">
-          <p className="text-gray-600">Connect with me on social media:</p>
+          <p className="text-gray-600">Connect with me on social media</p>
           <div className="flex justify-center mt-4">
             {/* LinkedIn Link */}
             <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-blue-500 transition duration-300">
@@ -48,7 +48,7 @@ const Contact = () => {
             </a>
 
             {/* GitHub Link */}
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-gray-800 transition duration-300">
+            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-blue-400 transition duration-300">
               GitHub
             </a>
 

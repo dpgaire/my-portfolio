@@ -28,18 +28,18 @@ const Experience = () => {
         'Maintained and updated documentation for code and processes.',
       ],
     },
-    {
-      company: 'Tech Innovators',
-      jobTitle: 'Senior Software Engineer',
-      duration: 'Jan 2021 - Present',
-      responsibilities: [
-        'Lead a team of developers in building innovative software solutions.',
-        'Collaborated with cross-functional teams to deliver high-quality products.',
-        'Implemented new features and optimized existing code for improved performance.',
-        'Conducted code reviews to ensure code quality and adherence to best practices.',
-        'Provided technical guidance and mentorship to junior team members.',
-      ],
-    },
+    // {
+    //   company: 'Tech Innovators',
+    //   jobTitle: 'Senior Software Engineer',
+    //   duration: 'Jan 2021 - Present',
+    //   responsibilities: [
+    //     'Lead a team of developers in building innovative software solutions.',
+    //     'Collaborated with cross-functional teams to deliver high-quality products.',
+    //     'Implemented new features and optimized existing code for improved performance.',
+    //     'Conducted code reviews to ensure code quality and adherence to best practices.',
+    //     'Provided technical guidance and mentorship to junior team members.',
+    //   ],
+    // },
   ];
 
   return (
