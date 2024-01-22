@@ -28,34 +28,34 @@ const Experience = () => {
         'Maintained and updated documentation for code and processes.',
       ],
     },
-    // {
-    //   company: 'Tech Innovators',
-    //   jobTitle: 'Senior Software Engineer',
-    //   duration: 'Jan 2021 - Present',
-    //   responsibilities: [
-    //     'Lead a team of developers in building innovative software solutions.',
-    //     'Collaborated with cross-functional teams to deliver high-quality products.',
-    //     'Implemented new features and optimized existing code for improved performance.',
-    //     'Conducted code reviews to ensure code quality and adherence to best practices.',
-    //     'Provided technical guidance and mentorship to junior team members.',
-    //   ],
-    // },
+    {
+      company: 'Tech Innovators',
+      jobTitle: 'Senior Software Engineer',
+      duration: 'Jan 2021 - Present',
+      responsibilities: [
+        'Lead a team of developers in building innovative software solutions.',
+        'Collaborated with cross-functional teams to deliver high-quality products.',
+        'Implemented new features and optimized existing code for improved performance.',
+        'Conducted code reviews to ensure code quality and adherence to best practices.',
+        'Provided technical guidance and mentorship to junior team members.',
+      ],
+    },
   ];
 
   return (
-    <div className="bg-gray-800 pt-16 h-screen" id="experience">
+    <div className="bg-black pt-16 " id="experience">
     <section className="container mx-auto mt-8 ">
     <h2 className="text-2xl font-bold mb-4 text-white">Work Experience</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((experience, index) => (
-          <div key={index} className={`flex items-center mb-8 bg-black rounded-lg p-8 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
+          <div key={index} className={`flex items-center mb-8 bg-slate-100 rounded-lg p-8 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
             {/* Work Experience Details */}
-            <div className="text-white">
+            <div className="text-black p-2">
               <h3 className="text-lg font-semibold mb-2">{experience.jobTitle}</h3>
               <p className="text-gray-600">{experience.company} | {experience.duration}</p>
-              <ul className="text-gray-300">
+              <ul className="text-gray-600 list-decimal">
                 {experience.responsibilities.map((responsibility, idx) => (
-                  <li key={idx}>{responsibility}</li>
+                  <li className='px-1 ' key={idx}>{responsibility}</li>
                 ))}
               </ul>
             </div>

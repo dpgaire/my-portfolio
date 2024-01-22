@@ -28,7 +28,7 @@ const Skills = () => {
   
 
   return (
-    <div id="skills" className="bg-gray-600 pt-16 pb-4">
+    <div id="skills" className="bg-black pt-16 pb-4">
     <section className="container mx-auto mt-8 ">
       <h2 className="text-2xl text-white font-bold mb-4">Skills</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

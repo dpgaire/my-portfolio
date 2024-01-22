@@ -3,11 +3,12 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 py-16" id="contact">
-      <div className="container mx-auto">
+    <section className="bg-black py-16" id="contact">
+      <section className="container mx-auto mt-8">
+    <h2 className="text-2xl font-bold mb-4 text-white">Contact Me</h2>
         {/* Contact Form */}
         <div className="  bg-white p-8 rounded-lg shadow-md w-full">
-          <h2 className="text-2xl font-bold mb-6">Contact Me</h2>
+          {/* <h2 className="text-2xl font-bold mb-6">Contact Me</h2> */}
           <form>
             {/* Name Field */}
             <div className="mb-4">
@@ -40,25 +41,25 @@ const Contact = () => {
 
         {/* Footer Section with Social Icons */}
         <div className="mt-8 text-center h-full">
-          <p className="text-gray-600">Connect with me on social media</p>
+          <p className="text-slate-300">Connect with me on social media</p>
           <div className="flex justify-center mt-4">
             {/* LinkedIn Link */}
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-blue-500 transition duration-300">
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-500 transition duration-300">
               LinkedIn
             </a>
 
             {/* GitHub Link */}
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-blue-400 transition duration-300">
+            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
               GitHub
             </a>
 
             {/* Twitter Link */}
-            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer" className="mx-4 text-gray-600 hover:text-blue-400 transition duration-300">
+            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
               Twitter
             </a>
           </div>
           </div>
-      </div>
+      </section>
     </section>
   );
 };

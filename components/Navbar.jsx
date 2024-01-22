@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GiHamburgerMenu, GiCrossMark } from "react-icons/gi";
 import Confetti from "react-dom-confetti";
 
@@ -19,6 +19,20 @@ const confettiConfig = {
 };
 
 const NAV_LINKS = ["About", "Experience", "Skills", "Projects", "Contact"];
+
+// To optimize the performance of your component
+const useDebouncedCallback = (callback, delay) => {
+  const debouncedCallback = useCallback(
+    (...args) => {
+      let timeoutId;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => callback(...args), delay);
+    },
+    [callback, delay]
+  );
+
+  return debouncedCallback;
+};
 
 // NavbarLogo component
 const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
@@ -83,6 +97,15 @@ const Navbar = () => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [confetti, setConfetti] = useState(false);
 
+  const debouncedHandleScroll = useDebouncedCallback((scrollPosition) => {
+    if (scrollPosition > 50) {
+      setIsScrolled(true);
+      setIsTooltipVisible(false);
+    } else {
+      setIsScrolled(false);
+    }
+  }, 200);
+
   const toggleTooltip = () => {
     setIsTooltipVisible(!isTooltipVisible);
     setConfetti(true);
@@ -91,23 +114,17 @@ const Navbar = () => {
     }, 2000);
   };
 
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    debouncedHandleScroll(scrollPosition);
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 50) {
-        setIsScrolled(true);
-        setIsTooltipVisible(false);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [debouncedHandleScroll]);
 
   return (
     <nav
