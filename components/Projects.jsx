@@ -35,7 +35,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-black pt-8 pb-8  ">
+    <div id="projects" className="bg-black pt-16 pb-8">
     <section className="container mx-auto mt-8">
       <h2 className="text-2xl font-bold mb-4 text-white">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

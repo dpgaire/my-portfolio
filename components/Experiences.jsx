@@ -43,7 +43,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="bg-gray-800 pt-8 h-screen">
+    <div className="bg-gray-800 pt-16 h-screen" id="experience">
     <section className="container mx-auto mt-8 ">
     <h2 className="text-2xl font-bold mb-4 text-white">Work Experience</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
