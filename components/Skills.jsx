@@ -1,29 +1,15 @@
-// components/Skills.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
-  // Sample skills data
-  const skills = [
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'HTML5',
-    'CSS3',
-    'SASS/SCSS',
-    'Responsive Design',
-    'RESTful APIs',
-    'Git/GitHub',
-    'Webpack',
-    'Redux',
-    'SQL',
-    'MongoDB',
-    'Express.js',
-    'GraphQL',
-    'Jest/Testing Library',
-    'Agile/Scrum',
-    'TypeScript',
-    'Next.js',
-  ];
+
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/skills') 
+      .then((response) => response.json())
+      .then((data) => setSkills(data.skills))
+      .catch((error) => console.error('Error fetching skills:', error));
+  }, []);
   
 
   return (

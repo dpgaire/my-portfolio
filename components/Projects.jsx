@@ -1,38 +1,17 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const Projects = () => {
-  const projects = [
-    {
-      title: 'E-commerce Website',
-      description: 'A full-stack e-commerce website built with React, Node.js, and MongoDB.',
-      image: '/images/background.png',
-      projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project1',
-    },
-    {
-      title: 'Social Media App',
-      description: 'A social media application with user authentication, built using MERN stack.',
-      image: '/images/background.png', 
-      projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project2',
-    },
-    {
-      title: 'Social Media App',
-      description: 'A social media application with user authentication, built using MERN stack.',
-      image: '/images/background.png', 
-      projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project2',
-    },
-    {
-      title: 'Social Media App',
-      description: 'A social media application with user authentication, built using MERN stack.',
-      image: '/images/background.png', 
-      projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project2',
-    },
-  ];
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/projects') 
+      .then((response) => response.json())
+      .then((data) => setProjects(data.projects))
+      .catch((error) => console.error('Error fetching projects:', error));
+  }, []);
 
   return (
     <div id="projects" className="bg-black pt-16 pb-8">
