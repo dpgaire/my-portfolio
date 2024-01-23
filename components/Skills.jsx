@@ -21,7 +21,6 @@ const Skills = () => {
     'GraphQL',
     'Jest/Testing Library',
     'Agile/Scrum',
-    'UI/UX Design',
     'TypeScript',
     'Next.js',
   ];

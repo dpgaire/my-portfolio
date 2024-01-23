@@ -15,7 +15,7 @@ const Introduction = () => {
         <h2 className="text-xl mb-4">Software Engineer</h2>
 
         {/* Description */}
-        <p className="text-lg mb-8 max-w-md mx-auto">High level experience in web design and development knowledge producing quality work.</p>
+        <p className="text-lg mb-8 max-w-md mx-auto">High level experience in web design and development knowledge with producing quality work.</p>
 
         {/* Call-to-action button */}
         <Link  href="#projects" className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">View Projects</Link>

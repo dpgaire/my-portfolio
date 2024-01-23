@@ -2,6 +2,34 @@
 import React from 'react';
 
 const Contact = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
+    };
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      console.log('Form submitted successfully');
+      // Optionally, you can show a success message or redirect the user
+    } else {
+      console.error('Error submitting form');
+      // Optionally, you can show an error message
+    }
+  };
+
   return (
     <section className="bg-black py-16" id="contact">
       <section className="container mx-auto mt-8">
@@ -9,7 +37,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="  bg-white p-8 rounded-lg shadow-md w-full">
           {/* <h2 className="text-2xl font-bold mb-6">Contact Me</h2> */}
-          <form>
+          <form onSubmit={handleSubmit}>
             {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-800">Name</label>
@@ -44,18 +72,18 @@ const Contact = () => {
           <p className="text-slate-300">Connect with me on social media</p>
           <div className="flex justify-center mt-4">
             {/* LinkedIn Link */}
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-500 transition duration-300">
+            <a href="https://www.linkedin.com/in/durga-gairhe" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-500 transition duration-300">
               LinkedIn
             </a>
 
             {/* GitHub Link */}
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
+            <a href="https://github.com/dpgaire" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
               GitHub
             </a>
 
             {/* Twitter Link */}
-            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
-              Twitter
+            <a href="https://www.instagram.com/dpgaire/" target="_blank" rel="noopener noreferrer" className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300">
+            Instagram
             </a>
           </div>
           </div>
