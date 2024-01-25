@@ -20,6 +20,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #4a5568, #2d3748);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #434190, #7f9cf5);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
