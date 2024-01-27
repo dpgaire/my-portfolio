@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SubmitButton } from "./ui/Button";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,10 +62,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-black py-16" id="contact">
+    <section className="bg-black px-2 lg:px-0 lg:pt-16 pt-4 pb-4" id="contact">
       <section className="container mx-auto mt-8">
-        <h2 className="text-2xl font-bold mb-4 text-white">Contact Me</h2>
-        <div className="  bg-white p-8 rounded-lg shadow-md w-full">
+        <h2 className="main__heading">Contact Me</h2>
+        <div className="  bg-white p-2 lg:p-8 rounded-lg shadow-md w-full font-serif">
           {submitSuccess && (
             <div className="text-2xl font-bold mb-6 text-green-600">
               Thank you! for your apprication.
@@ -73,7 +74,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit}>
             {/* Name Field */}
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-800">
+              <label htmlFor="name" className="block text-gray-800 ">
                 Name
               </label>
               <input
@@ -140,49 +141,8 @@ const Contact = () => {
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300"
-            >
-              {submitting ? "Submitting..." : "Send Message"}
-            </button>
+            <SubmitButton submitting={submitting}/>
           </form>
-        </div>
-
-        {/* Footer Section with Social Icons */}
-        <div className="mt-8 text-center h-full">
-          <p className="text-slate-300">Connect with me on social media</p>
-          <div className="flex justify-center mt-4">
-            {/* LinkedIn Link */}
-            <a
-              href="https://www.linkedin.com/in/durga-gairhe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-4 text-slate-300 hover:text-blue-500 transition duration-300"
-            >
-              LinkedIn
-            </a>
-
-            {/* GitHub Link */}
-            <a
-              href="https://github.com/dpgaire"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300"
-            >
-              GitHub
-            </a>
-
-            {/* Twitter Link */}
-            <a
-              href="https://www.instagram.com/dpgaire/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-4 text-slate-300 hover:text-blue-400 transition duration-300"
-            >
-              Instagram
-            </a>
-          </div>
         </div>
       </section>
     </section>

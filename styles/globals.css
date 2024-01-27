@@ -2,57 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* [#7844E9] */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .nav-links{
+    @apply text-white text-lg font-serif  hover:text-gray-300
+  }
+
+  .link_button{
+    @apply bg-[#7844E9] font-serif text-white px-4 py-2 rounded-full hover:bg-[#7844e9df] transition duration-300
+  }
+
+  .submit-button{
+    @apply bg-[#7844E9] lg:w-max w-full text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300
+  }
+
+  .intro__heading {
+    @apply lg:text-4xl text-2xl font-bold mb-2;
+  }
+  .main__heading{
+    @apply text-2xl font-bold mb-4 text-white
+  }
+  .main_section{
+    @apply bg-black pt-4 px-2 text-center lg:text-left lg:px-0 lg:pt-16 
+  }
+  .paragraph {
+    @apply text-lg  text-gray-700 text-justify;
+  }
 }
 
-/* Define scrollbar styles */
-::-webkit-scrollbar {
-  width: 4px;
+@layer utilities {
+  /* Define scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #4a5568, #2d3748);
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #434190, #7f9cf5);
+  }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #4a5568, #2d3748);
-}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #434190, #7f9cf5);
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
-/* styles/Home.module.css */
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
 

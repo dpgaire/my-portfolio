@@ -11,14 +11,13 @@ const Skills = () => {
       .catch((error) => console.error('Error fetching skills:', error));
   }, []);
   
-
   return (
-    <div id="skills" className="bg-black pt-16 pb-4">
+    <div id="skills" className="main_section font-serif">
     <section className="container mx-auto mt-8 ">
-      <h2 className="text-2xl text-white font-bold mb-4">Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <h2 className="main__heading">Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         {skills.map((skill, index) => (
-          <div key={index} className="bg-blue-500 text-white px-4 py-2 rounded-full text-center cursor-pointer hover:bg-blue-700 transition duration-300">
+          <div key={index} className="bg-[#7844E9] text-white px-4 py-2 rounded-full text-center cursor-pointer hover:bg-[#7844e9dd] transition duration-300">
             {skill}
           </div>
         ))}

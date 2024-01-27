@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { GiHamburgerMenu, GiCrossMark } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Confetti from "react-dom-confetti";
+import { MdOutlineClose } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 
 // Constants
 const confettiConfig = {
   angle: 90,
   spread: 360,
   startVelocity: 40,
-  elementCount: 70,
+  elementCount: 170,
   dragFriction: 0.12,
   duration: 3000,
   stagger: 3,
@@ -18,7 +21,7 @@ const confettiConfig = {
   colors: ["#ff0000", "#00ff00", "#0000ff"],
 };
 
-const NAV_LINKS = ["About", "Experience", "Skills", "Projects", "Contact"];
+const NAV_LINKS = ["About", "Experiences", "Skills", "Projects", "Contact"];
 
 // To optimize the performance of your component
 const useDebouncedCallback = (callback, delay) => {
@@ -37,13 +40,17 @@ const useDebouncedCallback = (callback, delay) => {
 // NavbarLogo component
 const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
   <div
-    className="text-white font-bold text-lg cursor-pointer "
+    className="text-white font-bold font-sans text-2xl cursor-pointer "
     onClick={onClick}
   >
-    Durga<span className="text-red-500">G</span>
+    <span className="text-[#7844E9] text-4xl">d</span>
+    urga<span className="text-[#7844E9] text-4xl">G</span>
     {isTooltipVisible && (
-      <div className="absolute bg-gray-800 text-white p-2 rounded shadow bottom-[-40px] left-0">
+      <div className="absolute text-lg bg-gray-800 text-white p-2 rounded shadow bottom-[-40px] left-0">
         Thank you for liking me.
+        <span>
+          <MdOutlineClose className="bg-black  rounded-full absolute shadow-white top-[-10px] right-[-5px]" />
+        </span>
       </div>
     )}
     <Confetti active={confetti} config={confettiConfig} />
@@ -52,21 +59,47 @@ const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
 
 // MobileNavigation component
 const MobileNavigation = ({ closeNav }) => (
-  <div className="md:hidden fixed inset-0 bg-gray-800 z-40">
+  <div className="md:hidden fixed inset-0 bg-[#7844E9] z-40">
     <div className="flex justify-end p-4">
       {/* Cross Icon to Close Navigation Overlay */}
-      <GiCrossMark
-        className="text-white text-2xl cursor-pointer"
+      <MdOutlineClose
         onClick={closeNav}
+        className="rounded-full text-white text-2xl cursor-pointer"
       />
     </div>
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="text-center text-white z-10">
+      {/* Cube-like Structure (Profile Picture) */}
+      <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto ">
+        <img
+          src={"/images/profile-pic.png"}
+          alt="Profile"
+          className="w-full p-2  rounded-full mx-auto mb-4"
+        />
+      </div>
+      <div className="inline-flex flex-end space-x-2 mt-2">
+        <Link
+          href="https://www.linkedin.com/in/durga-gairhe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin className="text-xl cursor-pointer bg-transparent text-white border-none" />
+        </Link>
+        <Link
+          href="https://github.com/dpgaire"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className="text-xl cursor-pointer bg-transparent text-white" />
+        </Link>
+      </div>
+    </div>
+    <div className="flex-center flex-col mt-2">
       {NAV_LINKS.map((section) => (
         <Link
           key={section}
           href={`#${section.toLowerCase()}`}
           onClick={closeNav}
-          className="text-white py-2 hover:text-gray-300 "
+          className="text-white py-2 hover:text-gray-300 wi font-bold "
         >
           {section}
         </Link>
@@ -77,17 +110,33 @@ const MobileNavigation = ({ closeNav }) => (
 
 // NavbarLinks component
 const NavbarLinks = ({ closeNav }) => (
-  <div className="hidden md:flex space-x-4">
+  <div className="hidden md:flex space-x-4 items-center font-sans">
     {NAV_LINKS.map((section) => (
       <Link
         key={section}
         href={`#${section.toLowerCase()}`}
         onClick={closeNav}
-        className="text-white hover:text-gray-300"
+        className="nav-links"
       >
         {section}
       </Link>
     ))}
+    <div className="inline-flex flex-end space-x-2">
+      <Link
+        href="https://www.linkedin.com/in/durga-gairhe"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin className="text-xl cursor-pointer bg-transparent text-[#7844E9] border-none" />
+      </Link>
+      <Link
+        href="https://github.com/dpgaire"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub className="text-xl cursor-pointer bg-transparent text-white" />
+      </Link>
+    </div>
   </div>
 );
 
@@ -128,9 +177,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 ${
-        isScrolled ? "bg-gray-800" : "bg-transparent"
-      } transition duration-300`}
+      className={`fixed w-full px-2 z-50 ${
+        isScrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"
+      } transition duration-400 font-sans`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 relative">
         {/* Logo */}
