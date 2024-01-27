@@ -5,17 +5,30 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Chat from "@/components/Chat";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="relative font-sans">
-      {/* <Chat/> */}
-      <Navbar />
-      <Introduction />
-      <Experiences />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+    <>
+      <Head>
+        <title>Durga Gairhe</title>
+        <meta
+          name="description"
+          content={
+            "High level experience in web design and development knowledge with producing quality work."
+          }
+        />
+        <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
+      </Head>
+      <div className="relative font-sans">
+        {/* <Chat/> */}
+        <Navbar />
+        <Introduction />
+        <Experiences />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
+    </>
   );
 }

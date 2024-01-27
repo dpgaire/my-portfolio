@@ -76,7 +76,7 @@ const MobileNavigation = ({ closeNav }) => (
           className="w-full p-2  rounded-full mx-auto mb-4"
         />
       </div>
-      <div className="inline-flex flex-end space-x-2 mt-2">
+      <div className="inline-flex flex-end space-x-2 mt-10">
         <Link
           href="https://www.linkedin.com/in/durga-gairhe"
           target="_blank"

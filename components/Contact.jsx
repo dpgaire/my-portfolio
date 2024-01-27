@@ -62,16 +62,16 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-black px-2 lg:px-0 lg:pt-16 pt-4 pb-4" id="contact">
+    <section className="main_section pb-2" id="contact">
       <section className="container mx-auto mt-8">
         <h2 className="main__heading">Contact Me</h2>
-        <div className="  bg-white p-2 lg:p-8 rounded-lg shadow-md w-full font-serif">
+        <div className="bg-white p-2 lg:p-8 rounded-lg shadow-md w-full font-serif">
           {submitSuccess && (
             <div className="text-2xl font-bold mb-6 text-green-600">
               Thank you! for your apprication.
             </div>
           )}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="text-left">
             {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-800 ">

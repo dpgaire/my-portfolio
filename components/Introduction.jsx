@@ -26,7 +26,7 @@ const Introduction = () => {
   }
 
   return (
-    <section id="about" className="h-screen flex items-center justify-center bg-cover bg-center relative bg-intro-back" >
+    <section id="about" className="lg:h-screen h-[90vh] flex items-center justify-center bg-cover bg-center relative bg-intro-back" >
       <div className="text-center text-white z-10">
         {/* Cube-like Structure (Profile Picture) */}
         <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto mb-4">
