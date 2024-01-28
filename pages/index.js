@@ -4,7 +4,6 @@ import Experiences from "../components/Experiences";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
-import Chat from "@/components/Chat";
 import Head from "next/head";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
       <div className="relative font-sans">
-        {/* <Chat/> */}
         <Navbar />
         <Introduction />
         <Experiences />

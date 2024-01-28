@@ -1,17 +1,5 @@
-// components/Experience.js
-import React, { useEffect, useState } from 'react';
 
-const Experience = () => {
- 
-  const [experiences, setExperiences] = useState([]);
-
-  useEffect(() => {
-    fetch('/api/experiences') 
-      .then((response) => response.json())
-      .then((data) => setExperiences(data.experiences))
-      .catch((error) => console.error('Error fetching projects:', error));
-  }, []);
-
+const Experience = ({ experiences }) => {
   return (
     <div className="main_section" id="experiences">
     <section className="container mx-auto mt-8 ">

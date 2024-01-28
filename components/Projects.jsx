@@ -1,17 +1,7 @@
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
-const Projects = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((response) => response.json())
-      .then((data) => setProjects(data.projects))
-      .catch((error) => console.error("Error fetching projects:", error));
-  }, []);
-
+const Projects = ({ projects }) => {
   return (
     <div id="projects" className="main_section">
       <section className="container mx-auto mt-8">

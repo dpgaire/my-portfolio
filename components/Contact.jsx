@@ -11,6 +11,7 @@ const Contact = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,7 +32,7 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "API-key":process.env.DATA_API_KEY
+          "API-key": process.env.DATA_API_KEY,
         },
         body: JSON.stringify(formData),
       });
@@ -51,18 +52,20 @@ const Contact = () => {
         }, 2000);
       } else {
         setSubmitSuccess(false);
+        setError("Something went wrong. Please try again.");
         console.log("Something went wrong");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitSuccess(false);
+      setError("Error submitting form. Please try again.");
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <section className="main_section pb-2" id="contact">
+    <section className="main_section pb-2 h-screen" id="contact">
       <section className="container mx-auto mt-8">
         <h2 className="main__heading">Contact Me</h2>
         <div className="bg-white p-2 lg:p-8 rounded-lg shadow-md w-full font-serif">
@@ -71,6 +74,7 @@ const Contact = () => {
               Thank you! for your apprication.
             </div>
           )}
+          {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleSubmit} className="text-left">
             {/* Name Field */}
             <div className="mb-4">

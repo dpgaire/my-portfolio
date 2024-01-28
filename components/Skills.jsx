@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from 'react';
 
-const Skills = () => {
-
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    fetch('/api/skills') 
-      .then((response) => response.json())
-      .then((data) => setSkills(data.skills))
-      .catch((error) => console.error('Error fetching skills:', error));
-  }, []);
-  
+const Skills = ({ skills }) => {
   return (
-    <div id="skills" className="main_section font-serif">
+    <div id="skills" className="main_section h-screen font-serif">
     <section className="container mx-auto mt-8 ">
       <h2 className="main__heading">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">

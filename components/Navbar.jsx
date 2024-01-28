@@ -114,7 +114,7 @@ const NavbarLinks = ({ closeNav }) => (
     {NAV_LINKS.map((section) => (
       <Link
         key={section}
-        href={`#${section.toLowerCase()}`}
+        href={`${section.toLowerCase()}`}
         onClick={closeNav}
         className="nav-links"
       >

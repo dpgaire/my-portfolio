@@ -1,0 +1,35 @@
+
+import Head from "next/head";
+import Introduction from "@/components/Introduction";
+
+export default function About({ myInfo }) {
+  return (
+    <>
+      <Head>
+        <title>About Me</title>
+        <meta
+          name="description"
+          content={
+            "Excellent attitude to learn new things"
+          }
+        />
+        <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
+      </Head>
+      <div className="relative font-sans">
+        <Introduction myInfo={myInfo}/>
+      </div>
+    </>
+  );
+}
+
+export async function getServerSideProps() {
+    const res = await fetch('http://localhost:3000/api/intoduction'); // Replace with your API endpoint
+    const { myInfo } = await res.json();
+  
+    return {
+      props: {
+        myInfo,
+      },
+    };
+}
+  
