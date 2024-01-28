@@ -15,9 +15,9 @@ export default function Experience({ experiences }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <div className="relative font-sans">
+      <section className="page_section">
         <Experiences experiences={experiences}/>
-      </div>
+      </section>
     </>
   );
 }
@@ -25,7 +25,6 @@ export default function Experience({ experiences }) {
 export async function getServerSideProps() {
     const res = await fetch('http://localhost:3000/api/experiences'); // Replace with your API endpoint
     const { experiences } = await res.json();
-  
     return {
       props: {
         experiences,

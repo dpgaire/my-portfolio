@@ -14,9 +14,9 @@ export default function Contact() {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <div className="relative font-sans">
+      <section className="page_section">
         <ContactComponent/>
-      </div>
+      </section>
     </>
   );
 }

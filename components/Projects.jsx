@@ -3,26 +3,19 @@ import { FaGithub } from "react-icons/fa";
 
 const Projects = ({ projects }) => {
   return (
-    <div id="projects" className="main_section">
-      <section className="container mx-auto mt-8">
+      <div className="container">
         <h2 className="main__heading">Projects</h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-lg p-2 lg:p-4 shadow-md">
-              {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-40 object-cover mb-4 rounded-md"
               />
-
-              {/* Project Title and Description */}
-              <h2 className="text-lg font-semibold mb-2 font-sans">{project.title}</h2>
-              <p className="text-gray-600 mb-4 font-serif">{project.description}</p>
-
-              {/* Icons for Viewing Project and GitHub Repository */}
+              <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+              <p className="text-gray-600 mb-4 ">{project.description}</p>
               <div className="flex justify-between">
-                {/* View Project Icon */}
                 <Link href={project.projectUrl}>
                   <span className="text-black hover:text-blue-700">
                     <svg
@@ -41,8 +34,6 @@ const Projects = ({ projects }) => {
                     </svg>
                   </span>
                 </Link>
-
-                {/* GitHub Icon */}
                 <Link href={project.githubUrl}>
                   <span
                     target="_blank"
@@ -56,8 +47,7 @@ const Projects = ({ projects }) => {
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
   );
 };
 

@@ -40,7 +40,7 @@ const useDebouncedCallback = (callback, delay) => {
 // NavbarLogo component
 const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
   <div
-    className="text-white font-bold font-sans text-2xl cursor-pointer "
+    className="text-white font-bold  text-2xl cursor-pointer "
     onClick={onClick}
   >
     <span className="text-[#7844E9] text-4xl">d</span>
@@ -57,18 +57,15 @@ const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
   </div>
 );
 
-// MobileNavigation component
 const MobileNavigation = ({ closeNav }) => (
   <div className="md:hidden fixed inset-0 bg-[#7844E9] z-40">
     <div className="flex justify-end p-4">
-      {/* Cross Icon to Close Navigation Overlay */}
       <MdOutlineClose
         onClick={closeNav}
         className="rounded-full text-white text-2xl cursor-pointer"
       />
     </div>
     <div className="text-center text-white z-10">
-      {/* Cube-like Structure (Profile Picture) */}
       <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto ">
         <img
           src={"/images/profile-pic.png"}
@@ -97,7 +94,7 @@ const MobileNavigation = ({ closeNav }) => (
       {NAV_LINKS.map((section) => (
         <Link
           key={section}
-          href={`#${section.toLowerCase()}`}
+          href={`${section.toLowerCase()}`}
           onClick={closeNav}
           className="text-white py-2 hover:text-gray-300 wi font-bold "
         >
@@ -108,9 +105,8 @@ const MobileNavigation = ({ closeNav }) => (
   </div>
 );
 
-// NavbarLinks component
 const NavbarLinks = ({ closeNav }) => (
-  <div className="hidden md:flex space-x-4 items-center font-sans">
+  <div className="hidden md:flex space-x-4 items-center">
     {NAV_LINKS.map((section) => (
       <Link
         key={section}
@@ -179,30 +175,26 @@ const Navbar = () => {
     <nav
       className={`fixed w-full px-2 z-50 ${
         isScrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"
-      } transition duration-400 font-sans`}
+      }  font-serif`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 relative">
-        {/* Logo */}
         <NavbarLogo
           onClick={toggleTooltip}
           isTooltipVisible={isTooltipVisible}
           confetti={confetti}
         />
-        {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">
           <GiHamburgerMenu
             className="text-white text-2xl cursor-pointer"
             onClick={() => setIsNavOpen(!isNavOpen)}
           />
         </div>
-        {/* Mobile Navigation */}
         {isNavOpen && (
           <MobileNavigation
             isOpen={isNavOpen}
             closeNav={() => setIsNavOpen(false)}
           />
         )}
-        {/* Navigation Links */}
         <NavbarLinks closeNav={() => setIsNavOpen(false)} />
       </div>
     </nav>

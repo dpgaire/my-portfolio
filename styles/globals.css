@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* [#7844E9] */
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -13,6 +11,10 @@
 @layer components {
   .container {
     @apply mx-auto max-w-7xl;
+  }
+
+  .page_section{
+    @apply font-serif pt-28 min-h-screen bg-intro-back bg-no-repeat bg-cover 
   }
 
   .flex-center {
@@ -34,14 +36,9 @@
   .intro__heading {
     @apply lg:text-4xl text-2xl font-bold mb-2;
   }
+
   .main__heading{
     @apply text-2xl font-bold mb-4 text-white
-  }
-  .main_section{
-    @apply bg-black pt-4 px-2 text-center lg:text-left lg:px-0 lg:pt-16 
-  }
-  .paragraph {
-    @apply text-lg  text-gray-700 text-justify;
   }
 }
 

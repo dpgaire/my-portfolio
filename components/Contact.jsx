@@ -45,8 +45,6 @@ const Contact = () => {
           message: "",
         });
         setSubmitSuccess(true);
-
-        // Clear the success message after 2 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 2000);
@@ -65,8 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="main_section pb-2 h-screen" id="contact">
-      <section className="container mx-auto mt-8">
+      <section className="container">
         <h2 className="main__heading">Contact Me</h2>
         <div className="bg-white p-2 lg:p-8 rounded-lg shadow-md w-full font-serif">
           {submitSuccess && (
@@ -76,7 +73,6 @@ const Contact = () => {
           )}
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleSubmit} className="text-left">
-            {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-800 ">
                 Name
@@ -92,8 +88,6 @@ const Contact = () => {
                 required
               />
             </div>
-
-            {/* Email Field */}
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-800">
                 Email
@@ -109,8 +103,6 @@ const Contact = () => {
                 required
               />
             </div>
-
-            {/* Message Field */}
             <div className="mb-4">
               <label htmlFor="subject" className="block text-gray-800">
                 Subject
@@ -126,8 +118,6 @@ const Contact = () => {
                 required
               />
             </div>
-
-            {/* Message Field */}
             <div className="mb-6">
               <label htmlFor="message" className="block text-gray-800">
                 Message
@@ -143,13 +133,10 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-
-            {/* Submit Button */}
             <SubmitButton submitting={submitting}/>
           </form>
         </div>
       </section>
-    </section>
   );
 };
 

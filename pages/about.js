@@ -15,9 +15,9 @@ export default function About({ myInfo }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <div className="relative font-sans">
+      <section className="flex-center min-h-screen font-serif  bg-cover bg-intro-back">
         <Introduction myInfo={myInfo}/>
-      </div>
+      </section>
     </>
   );
 }

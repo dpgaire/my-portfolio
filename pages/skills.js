@@ -14,7 +14,7 @@ export default function Skills({ skills }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <div className="relative font-sans">
+      <div className="page_section">
         <SkillsComponent skills={skills}/>
       </div>
     </>

@@ -14,9 +14,9 @@ export default function Projects({ projects }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <div className="relative font-sans">
+      <section className="page_section">
         <ProjectsComponent projects={projects}/>
-      </div>
+      </section>
     </>
   );
 }
@@ -24,7 +24,6 @@ export default function Projects({ projects }) {
 export async function getServerSideProps() {
     const res = await fetch('http://localhost:3000/api/projects'); // Replace with your API endpoint
     const { projects } = await res.json();
-  
     return {
       props: {
         projects,
