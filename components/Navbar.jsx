@@ -5,6 +5,7 @@ import Confetti from "react-dom-confetti";
 import { MdOutlineClose } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import {  useRouter } from "next/router";
 
 // Constants
 const confettiConfig = {
@@ -58,7 +59,7 @@ const NavbarLogo = ({ onClick, isTooltipVisible, confetti }) => (
 );
 
 const MobileNavigation = ({ closeNav }) => (
-  <div className="md:hidden fixed inset-0 bg-[#7844E9] z-40">
+  <div className="md:hidden fixed inset-0 bg-primary z-40">
     <div className="flex justify-end p-4">
       <MdOutlineClose
         onClick={closeNav}
@@ -66,7 +67,7 @@ const MobileNavigation = ({ closeNav }) => (
       />
     </div>
     <div className="text-center text-white z-10">
-      <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto ">
+      <div className="lg:w-32 lg:h-32 w-28 h-28 bg-primary rounded-full mx-auto ">
         <img
           src={"/images/profile-pic.png"}
           alt="Profile"
@@ -137,6 +138,7 @@ const NavbarLinks = ({ closeNav }) => (
 );
 
 const Navbar = () => {
+  const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -153,6 +155,7 @@ const Navbar = () => {
 
   const toggleTooltip = () => {
     setIsTooltipVisible(!isTooltipVisible);
+    router.push('/')
     setConfetti(true);
     setTimeout(() => {
       setConfetti(false);

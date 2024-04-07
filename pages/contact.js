@@ -1,6 +1,7 @@
 import Head from "next/head";
 import ContactComponent from "../components/Contact";
 
+
 export default function Contact() {
   return (
     <>
@@ -14,9 +15,7 @@ export default function Contact() {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <section className="page_section">
         <ContactComponent/>
-      </section>
     </>
   );
 }

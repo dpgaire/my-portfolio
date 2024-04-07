@@ -8,11 +8,31 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Helvetica', 'Arial', 'sans-serif'],
-        'serif': ['ui-serif', 'Georgia',]
+        'sans': ['Segoe UI', 'Arial', 'sans-serif'],
+        'serif': ['ui-serif', 'Georgia'],
+        'poppins':['Poppins', 'sans-serif']
       },
       backgroundImage: {
         'intro-back': "url('/images/background.png')",
+      },
+      backgroundColor:{
+        'primary': '#7844E9',
+        'secondary': '#2C3E50',
+      },
+      colors: {
+        'primaryText':'#ECF0F1',
+        'secondaryText':'#4F4F4F',
+        'tersaryText':'#7844E9'
+        // 'secondaryText':'#7844E9',
+      },
+      fontSize: {
+        // Define your custom font sizes
+        title: '2.5rem',
+        navItems: '1.5rem',
+        subTitle: '1.25rem',
+        description: '1rem',
+        
+        // ... add more font sizes as needed
       },
       screens: {
         // => @media (min-width: 640px) { ... }

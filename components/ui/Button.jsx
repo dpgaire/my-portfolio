@@ -5,13 +5,13 @@ const LinkButton = ({href,content}) => {
   return <Link  href={href} className="link_button">{content}</Link>;
 };
 
-const SubmitButton = ({submitting}) => {
+const SubmitButton = ({ submitting= false , text }) => {
   return (
     <button
       type="submit"
       className="submit-button"
     >
-      {submitting ? "Submitting..." : "Send Message"}
+      {submitting ? "Submitting..." : text}
     </button>
   );
 };

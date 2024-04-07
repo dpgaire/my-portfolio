@@ -1,11 +1,22 @@
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { SubmitButton } from "./ui/Button";
 
 const Projects = ({ projects }) => {
   return (
-      <div className="container">
-        <h2 className="main__heading">Projects</h2>
-        <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
+    <div className="py-12 text-[#4F4F4F] text-center max-w-[920px] mx-auto">
+        <h1 className="text-4xl font-bold">Projects</h1>
+        <div className="mt-2 flex flex-col gap-2 ">
+              <p>
+                Interested in hiring me for your project or just want to say hi?
+                You can fill in the contact form below or send me an email to <code className="text-blue-800 cursor-pointer underline">gairhedurga13@gmail.com</code>
+              </p>
+              <p>Want to get connected? Follow me on the social channels below.</p>
+              <div className="inline-flex space-x-2 mx-auto py-2">
+                <SubmitButton text="Hire me"/>
+              </div>
+            </div>
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-8 text-left">
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-lg p-2 lg:p-4 shadow-md">
               <img

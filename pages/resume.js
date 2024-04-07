@@ -1,11 +1,11 @@
 import Head from "next/head";
-import ProjectsComponent from "../components/Projects";
+import ResumeComponent from "@/components/Resume";
 
-export default function Projects({ projects }) {
+export default function Resume({ projects }) {
   return (
     <>
       <Head>
-        <title>Projects</title>
+        <title>Resume</title>
         <meta
           name="description"
           content={
@@ -14,7 +14,7 @@ export default function Projects({ projects }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-        <ProjectsComponent projects={projects}/>
+        <ResumeComponent />
     </>
   );
 }
