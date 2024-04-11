@@ -19,6 +19,8 @@ const skills = [
     'Agile/Scrum',
     'TypeScript',
     'Next.js',
+    'Bash Script',
+    'Python'
   ];
   
   export default (req, res) => {

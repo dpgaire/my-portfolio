@@ -12,23 +12,42 @@ const Projects = () => {
       .catch((error) => console.error("Error fetching projects:", error));
   }, []);
 
+  const trimTitle = (title, maxLength) => {
+    return title.length > maxLength
+      ? title.substring(0, maxLength) + "..."
+      : title;
+  };
+
   return (
     <div id="projects" className="main_section">
       <section className="container mx-auto mt-8">
         <h2 className="main__heading">Projects</h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg p-2 lg:p-4 shadow-md">
+            <div
+              key={index}
+              className="bg-white rounded-lg p-2 lg:p-4 shadow-md"
+            >
               {/* Project Image */}
-              <img
+              {/* <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-40 object-cover mb-4 rounded-md"
-              />
+              /> */}
+
+              <video controls width="100%" height="300">
+                <source src={project.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
               {/* Project Title and Description */}
-              <h2 className="text-lg font-semibold mb-2 font-sans">{project.title}</h2>
-              <p className="text-gray-600 mb-4 font-serif">{project.description}</p>
+              <h2 className="text-lg font-semibold mb-2 font-sans">
+                {project.title}
+              </h2>
+              {/* <p className="text-gray-600 mb-4 font-serif">{trimTitle(project.description, 200)}</p> */}
+              <p className="text-gray-600 mb-4 font-serif">
+                {project.description}
+              </p>
 
               {/* Icons for Viewing Project and GitHub Repository */}
               <div className="flex justify-between">

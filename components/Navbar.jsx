@@ -21,7 +21,7 @@ const confettiConfig = {
   colors: ["#ff0000", "#00ff00", "#0000ff"],
 };
 
-const NAV_LINKS = ["About", "Experiences", "Skills", "Projects", "Contact"];
+const NAV_LINKS = ["About", "Experiences", "Skills", "Projects","Blogs", "Contact"];
 
 // To optimize the performance of your component
 const useDebouncedCallback = (callback, delay) => {
@@ -157,7 +157,7 @@ const Navbar = () => {
 
   const toggleTooltip = () => {
     setIsTooltipVisible(!isTooltipVisible);
-    setConfetti(true);
+    setConfetti(true);isScrolled
     setTimeout(() => {
       setConfetti(false);
     }, 2000);

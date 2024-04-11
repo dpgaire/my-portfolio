@@ -30,7 +30,7 @@ const Introduction = () => {
       <div className="text-center text-white z-10">
         {/* Cube-like Structure (Profile Picture) */}
         <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto mb-4">
-        <img src={'/images/profile-pic.png'} alt="Profile" className="w-full p-2 h-full rounded-full mx-auto mb-4" />
+        <img src={'/images/my-profile.png'} alt="Profile" className="w-full p-2 h-full rounded-full mx-auto mb-4" />
         </div>
         {/* Title and Subtitle */}
         <h1 className="intro__heading">{profile.title}</h1>
