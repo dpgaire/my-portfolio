@@ -1,9 +1,8 @@
-**Title: Managing Development Server Processes with Bash Scripting**
+**Managing Development Server Processes with Bash Scripting**
 
-**Description:**
 In a typical development environment, it's common to run multiple servers simultaneously. However, managing these server processes manually can be cumbersome and time-consuming. In this blog post, we'll explore how to simplify the management of development server processes using a Bash script. By automating tasks such as listing processes by port and killing them if necessary, developers can streamline their workflow and focus more on coding.
 
-**Script:**
+**Script**
 
 ```bash
 #!/bin/bash
@@ -47,7 +46,7 @@ else
 fi
 ```
 
-**Explanation:**
+**Explanation**
 
 1. The script defines two functions: `list_processes_by_port` to list processes using a specified port, and `kill_process_by_pid` to kill a process by its PID.
 2. It lists processes for common development server ports (e.g., 8080, 3000, 3001) using the `list_processes_by_port` function.
@@ -56,7 +55,8 @@ fi
 5. If a process is found for the specified port, it kills the process using `kill_process_by_pid`.
 6. It provides appropriate feedback based on whether the process was successfully killed or not.
 
-**Conclusion:**
+**Conclusion**
+
 By using a Bash script to manage development server processes, developers can streamline their workflow and save time. This automation simplifies the process of identifying and terminating server processes, improving efficiency and productivity. Feel free to customize the script to fit your specific development environment and enjoy a smoother development experience.
 
 That wraps up our guide on managing development server processes with Bash scripting. Happy coding and automating!

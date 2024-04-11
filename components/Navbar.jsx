@@ -71,7 +71,7 @@ const MobileNavigation = ({ closeNav }) => (
       {/* Cube-like Structure (Profile Picture) */}
       <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto ">
         <img
-          src={"/images/profile-pic.png"}
+          src={"/images/my-profile.png"}
           alt="Profile"
           className="w-full p-2  rounded-full mx-auto mb-4"
         />
