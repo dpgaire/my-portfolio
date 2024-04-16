@@ -6,7 +6,7 @@ const projects = [
       image: '/images/background.png',
       video:'/video/todo_app.mp4',
       projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/dpgaire/browser-extensions/blob/master/to_do_app/README.md',
+      githubUrl: 'https://github.com/dpgaire/browser-extensions/to_do_app',
     },
     {
       title: 'Note Saver',
@@ -14,15 +14,15 @@ const projects = [
       image: '/images/background.png', 
       video:'/video/notes-f.mp4',
       projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project2',
+      githubUrl: 'https://github.com/dpgaire/browser-extensions/notes',
     },
     {
       title: 'Image Gallery',
-      description: 'A social media application with user authentication, built using MERN stack.',
+      description: 'An image gallery Google Chrome extension that allows you to easily save images from your browser with a simple click.',
       image: '/images/background.png', 
       video:'/video/image-gallery.mp4',
       projectUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example/project2',
+      githubUrl: 'https://github.com/dpgaire/browser-extensions',
     }
   ];
   
