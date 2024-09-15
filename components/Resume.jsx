@@ -1,6 +1,6 @@
 import React from "react";
 import { SubmitButton } from "./ui/Button";
-import { FaPhone,FaGithub, } from "react-icons/fa";
+import { FaPhone, FaGithub } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
 import { ImLocation } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa6";
@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Resume = () => {
   return (
-    <div className="py-12 text-[#4F4F4F] text-center max-w-[920px] mx-auto">
+    <div className="py-12 text-[#4F4F4F] text-center max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold">Online Resume</h1>
       <div className="mt-2 flex flex-col gap-2 ">
         <div className="inline-flex space-x-2 mx-auto py-2">
@@ -49,7 +49,7 @@ const Resume = () => {
           {/* <div className=""> */}
           <img
             className="w-24 h-24 rounded-full"
-            src="/images/profile.png"
+            src="/images/durga.png"
             alt="profile-image"
           />
           <p className="flex-1 text-left text-sm">
@@ -170,27 +170,25 @@ const Resume = () => {
           </div>
         </div>
         <div className="inline-flex space-x-2 mx-auto p-4">
-            <Link
-              href="https://www.linkedin.com/in/durga-gairhe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <FaLinkedin className="text-xl cursor-pointer bg-transparent  border-none" />
-              https://www.linkedin.com/in/durga-gairhe
-              
-            </Link>
-            <Link
-              href="https://github.com/dpgaire"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-             
-              <FaGithub className="text-xl cursor-pointer bg-transparent " />
-              https://github.com/dpgaire
-            </Link>
-          </div>
+          <Link
+            href="https://www.linkedin.com/in/durga-gairhe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+          >
+            <FaLinkedin className="text-xl cursor-pointer bg-transparent  border-none" />
+            https://www.linkedin.com/in/durga-gairhe
+          </Link>
+          <Link
+            href="https://github.com/dpgaire"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+          >
+            <FaGithub className="text-xl cursor-pointer bg-transparent " />
+            https://github.com/dpgaire
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { SubmitButton } from "./ui/Button";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +15,6 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [error, setError] = useState(null);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +66,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-12 text-[#4F4F4F] text-center max-w-[820px] mx-auto">
+    <div className="pt-4 text-[#4F4F4F] text-center max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold">Contact</h1>
       <div className="mt-2 flex flex-col gap-2 ">
         <p>

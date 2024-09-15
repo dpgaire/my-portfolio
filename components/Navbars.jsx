@@ -10,9 +10,8 @@ import { MdOutlineWeb, MdContactMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { useRouter } from "next/router";
 
-
 const Navbars = () => {
-const router = useRouter()
+  const router = useRouter();
   return (
     <header className="w-64 fixed h-full font-poppins bg-secondaryText text-primaryText">
       {/* Intro */}
@@ -21,7 +20,7 @@ const router = useRouter()
         <div className="flex flex-col py-6 px-4">
           <div className="w-28 h-28 bg-gray-400 rounded-full mx-auto mb-4">
             <img
-              src={"/images/profile-pic.png"}
+              src={"/images/durga.png"}
               alt="Profile"
               className="w-full p-2 h-full rounded-full mx-auto "
             />
@@ -50,13 +49,16 @@ const router = useRouter()
             {NAV_LINKS_HEAD.map((section, index) => (
               <div
                 key={index}
-                className={`nav_bar_section mt-1 ${router.pathname === `/${section.title.toLowerCase()}` ? 'active' : ''}` }
+                className={`nav_bar_section mt-1 ${
+                  router.pathname === `/${section.title.toLowerCase()}`
+                    ? "active"
+                    : ""
+                }`}
               >
                 {section.icon}
                 <Link
-                
                   key={section}
-                  href={`/${section.title.toLowerCase()}`}
+                  href={`${section.path}`}
                   className=" font-bold py-2"
                 >
                   {section.title}
@@ -73,28 +75,32 @@ const router = useRouter()
 export default Navbars;
 
 const NAV_LINKS_HEAD = [
-    {
-      title: "About",
-      icon: <FaUser />,
-    },
-    {
-      title: "Resume",
-      icon: <FaFileCode />,
-    },
-    // {
-    //   title: "Experiences",
-    //   icon: <FaLaptopCode />,
-    // },
-    // {
-    //   title: "Skills",
-    //   icon: <FaTools />,
-    // },
-    {
-      title: "Projects",
-      icon: <MdOutlineWeb />,
-    },
-    {
-      title: "Contact",
-      icon: <MdContactMail />,
-    },
-  ];
+  {
+    title: "About",
+    path: "/",
+    icon: <FaUser />,
+  },
+  {
+    title: "Resume",
+    path: "/resume",
+    icon: <FaFileCode />,
+  },
+  // {
+  //   title: "Experiences",
+  //   icon: <FaLaptopCode />,
+  // },
+  // {
+  //   title: "Skills",
+  //   icon: <FaTools />,
+  // },
+  {
+    title: "Projects",
+    path: "/projects",
+    icon: <MdOutlineWeb />,
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+    icon: <MdContactMail />,
+  },
+];
