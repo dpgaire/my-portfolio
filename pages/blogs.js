@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsComponent from "../components/Projects";
+import BlogComponent from "../components/Blog";
 import Head from "next/head";
 
 export default function Blogs({ projects }) {
@@ -10,7 +10,7 @@ export default function Blogs({ projects }) {
         <meta name="description" content={"Lost's of projects"} />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <ProjectsComponent projects={projects} />
+      <BlogComponent blogs={projects} />
     </>
   );
 }

@@ -1,17 +1,18 @@
+import React from "react";
+import PageHeader from "./PageHeader";
+import { HEADER_CONTENT } from "@/data";
+import SocialLinks from "./SocialLinks";
+import { SubmitButton } from "./ui/Button";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { SubmitButton } from "./ui/Button";
-import PageHeader from "./PageHeader";
-import SocialLinks from "./SocialLinks";
-import { HEADER_CONTENT } from "@/data";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 
-const Projects = ({ projects }) => {
+const Blog = ({ blogs }) => {
   return (
     <div className="py-12 text-[#4F4F4F] text-center max-w-5xl mx-auto">
       <PageHeader
-        title="Projects"
+        title="Blogs"
         content={content}
         email={email}
         footerDescription={footerDescription}
@@ -22,17 +23,17 @@ const Projects = ({ projects }) => {
         </div>
       </PageHeader>
       <div className="grid grid-cols-1  lg:grid-cols-3 gap-8 text-left">
-        {projects.map((project, index) => (
+        {blogs.map((blog, index) => (
           <div key={index} className="bg-white rounded-lg p-2 lg:p-4 shadow-md">
             <img
-              src={project.image}
-              alt={project.title}
+              src={blog.image}
+              alt={blog.title}
               className="w-full h-40 object-cover mb-4 rounded-md"
             />
-            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
-            <p className="text-gray-600 mb-4 ">{project.description}</p>
+            <h2 className="text-lg font-semibold mb-2">{blog.title}</h2>
+            <p className="text-gray-600 mb-4 ">{blog.description}</p>
             <div className="flex justify-between">
-              <Link href={project.projectUrl}>
+              <Link href={blog.projectUrl}>
                 <span className="text-black hover:text-blue-700">
                   <svg
                     className="w-6 h-6"
@@ -50,7 +51,7 @@ const Projects = ({ projects }) => {
                   </svg>
                 </span>
               </Link>
-              <Link href={project.githubUrl}>
+              <Link href={blog.githubUrl}>
                 <span
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,4 +68,4 @@ const Projects = ({ projects }) => {
   );
 };
 
-export default Projects;
+export default Blog;

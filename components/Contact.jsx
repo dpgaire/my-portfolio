@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { SubmitButton } from "./ui/Button";
-import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
+import PageHeader from "./PageHeader";
+import { HEADER_CONTENT } from "@/data";
+
+const { content, email, footerDescription } = HEADER_CONTENT;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,33 +69,14 @@ const Contact = () => {
 
   return (
     <div className="pt-4 text-[#4F4F4F] text-center max-w-5xl mx-auto">
-      <h1 className="text-4xl font-bold">Contact</h1>
-      <div className="mt-2 flex flex-col gap-2 ">
-        <p>
-          Interested in hiring me for your project or just want to say hi? You
-          can fill in the contact form below or send me an email to{" "}
-          <code className="text-blue-800 cursor-pointer underline">
-            gairhedurga13@gmail.com
-          </code>
-        </p>
-        <p>Want to get connected? Follow me on the social channels below.</p>
-        <div className="inline-flex space-x-2 mx-auto py-2">
-          <Link
-            href="https://www.linkedin.com/in/durga-gairhe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="text-xl cursor-pointer bg-transparent  border-none" />
-          </Link>
-          <Link
-            href="https://github.com/dpgaire"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="text-xl cursor-pointer bg-transparent " />
-          </Link>
-        </div>
-      </div>
+      <PageHeader
+        title="Contact me"
+        content={content}
+        email={email}
+        footerDescription={footerDescription}
+      >
+        <SocialLinks />
+      </PageHeader>
       <div className=" font-poppins  bg-white max-w-[992px] mx-auto mb-4 p-2 lg:p-4 rounded-lg shadow-md w-full">
         <h2 className="text-3xl font-bold text-[#4F4F4F] text-center my-2">
           Get In Touch
