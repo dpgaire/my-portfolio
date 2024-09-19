@@ -6,6 +6,7 @@ import {
   FaLaptopCode,
   FaFileCode,
 } from "react-icons/fa";
+import { BsLayoutTextSidebar } from "react-icons/bs";
 import { MdOutlineWeb, MdContactMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { useRouter } from "next/router";
@@ -35,24 +36,24 @@ const Navbars = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="text-xl cursor-pointer bg-transparent  border-none" />
+              <FaLinkedin className="text-xl cursor-pointer bg-transparent border-none hover:scale-125 transition ease-in-out delay-100" />
             </Link>
             <Link
               href="https://github.com/dpgaire"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="text-xl cursor-pointer bg-transparent " />
+              <FaGithub className="text-xl cursor-pointer bg-transparent hover:scale-125 transition ease-in-out delay-100" />
             </Link>
           </div>
           <div className="flex flex-start flex-col gap-2 mt-4 pl-8">
             {NAV_LINKS_HEAD.map((section, index) => (
               <div
                 key={index}
-                className={`nav_bar_section mt-1 ${
-                  router.pathname === `/${section.title.toLowerCase()}`
+                className={`nav_bar_section mt-1 border border-transparent px-2 ${
+                  router.pathname === `${section.path}`
                     ? "active"
-                    : ""
+                    : "hover:border hover:bg-primary hover:text-white"
                 }`}
               >
                 {section.icon}
@@ -85,10 +86,11 @@ const NAV_LINKS_HEAD = [
     path: "/resume",
     icon: <FaFileCode />,
   },
-  // {
-  //   title: "Experiences",
-  //   icon: <FaLaptopCode />,
-  // },
+  {
+    title: "Blogs",
+    path: "/blogs",
+    icon: <BsLayoutTextSidebar />,
+  },
   // {
   //   title: "Skills",
   //   icon: <FaTools />,
