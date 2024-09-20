@@ -1,34 +1,17 @@
 import React, { useState } from "react";
-import { SubmitButton } from "./ui/Button";
 import SocialLinks from "./SocialLinks";
 import PageHeader from "./PageHeader";
-import { HEADER_CONTENT } from "@/data";
+import { formConfig, HEADER_CONTENT } from "@/data";
+import DynamicForm from "./form/DynamicForm";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (formData) => {
     if (submitting) return;
 
     try {
@@ -43,12 +26,6 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
         setSubmitSuccess(true);
         setTimeout(() => {
           setSubmitSuccess(false);
@@ -56,10 +33,8 @@ const Contact = () => {
       } else {
         setSubmitSuccess(false);
         setError("Something went wrong. Please try again.");
-        console.log("Something went wrong");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       setSubmitSuccess(false);
       setError("Error submitting form. Please try again.");
     } finally {
@@ -87,69 +62,12 @@ const Contact = () => {
           </div>
         )}
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <form onSubmit={handleSubmit} className="text-left p-4">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-800 ">
-              Name
-            </label>
-            <input
-              value={formData.name}
-              onChange={handleChange}
-              type="text"
-              id="name"
-              name="name"
-              className="w-full p-2 border rounded-md"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-800">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              name="email"
-              className="w-full p-2 border rounded-md"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="subject" className="block text-gray-800">
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              name="subject"
-              className="w-full p-2 border rounded-md"
-              placeholder="Subject"
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-800">
-              Message
-            </label>
-            <textarea
-              id="message"
-              value={formData.message}
-              onChange={handleChange}
-              name="message"
-              rows="4"
-              className="w-full p-2 border rounded-md"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
-          <SubmitButton text="Send Now" submitting={submitting} />
-        </form>
+        <DynamicForm
+          config={formConfig}
+          onSubmit={handleSubmit}
+          loading={submitting}
+          submitText="Send Now"
+        />
       </div>
     </div>
   );

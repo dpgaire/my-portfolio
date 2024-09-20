@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { SubmitButton } from "./ui/Button";
 import PageHeader from "./PageHeader";
 import SocialLinks from "./SocialLinks";
 import { HEADER_CONTENT } from "@/data";
+import { SubmitButton } from "./ui";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 

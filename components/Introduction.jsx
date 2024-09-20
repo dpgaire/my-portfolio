@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/router";
-import { SubmitButton } from "./ui/Button";
+import { SubmitButton } from "./ui";
 
 const Introduction = ({ myInfo }) => {
   const router = useRouter();

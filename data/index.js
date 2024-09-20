@@ -56,4 +56,40 @@ const HEADER_CONTENT = {
     "Want to get connected? Follow me on the social channels below.",
 };
 
-export { NAV_LINKS, SOCIAL_LINKS, HEADER_CONTENT };
+// Configuration for the form fields
+const formConfig = [
+  {
+    name: "name",
+    label: "Name",
+    type: "text",
+    placeholder: "Your Name",
+    fieldType: "input",
+    required: true,
+  },
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+    placeholder: "Your Email",
+    fieldType: "input",
+    required: true,
+  },
+  {
+    name: "subject",
+    label: "Subject",
+    type: "text",
+    placeholder: "Subject",
+    fieldType: "input",
+    required: true,
+  },
+  {
+    name: "message",
+    label: "Message",
+    placeholder: "Your Message",
+    type: "text",
+    fieldType: "textarea",
+    required: true,
+  },
+];
+
+export { NAV_LINKS, SOCIAL_LINKS, HEADER_CONTENT, formConfig };

@@ -1,10 +1,10 @@
 import React from "react";
-import { SubmitButton } from "./ui/Button";
 import { FaPhone, FaGithub } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
 import { ImLocation } from "react-icons/im";
 import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
+import { SubmitButton } from "./ui";
 
 const Resume = () => {
   return (

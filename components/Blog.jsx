@@ -2,9 +2,9 @@ import React from "react";
 import PageHeader from "./PageHeader";
 import { HEADER_CONTENT } from "@/data";
 import SocialLinks from "./SocialLinks";
-import { SubmitButton } from "./ui/Button";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import { SubmitButton } from "./ui";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 
