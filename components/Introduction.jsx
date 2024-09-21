@@ -5,7 +5,10 @@ import { SubmitButton } from "./ui";
 const Introduction = ({ myInfo }) => {
   const router = useRouter();
   return (
-    <div className="text-center text-white z-10">
+    <div
+      // className="text-center text-white z-10"
+      className=" font-poppins text-center  bg-white max-w-[992px] text-secondaryText mx-auto mb-4 p-2 lg:p-4 rounded-lg shadow-md w-full"
+    >
       <div className="lg:w-32 lg:h-32 w-28 h-28 bg-primary rounded-full mx-auto mb-4">
         <img
           src={myInfo?.profile_image}

@@ -27,6 +27,7 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmitSuccess(true);
+
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 2000);

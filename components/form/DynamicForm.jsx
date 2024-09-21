@@ -54,7 +54,6 @@ const DynamicForm = ({ config, onSubmit, loading, submitText }) => {
     e.preventDefault();
     if (validate()) {
       onSubmit(formData);
-      // Reset form data and errors after successful submission
       setFormData({});
       setErrors({});
     }
@@ -79,7 +78,7 @@ const DynamicForm = ({ config, onSubmit, loading, submitText }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-2">
       {config.map((field, index) => (
         <div key={index} className="flex flex-col">
           {renderField(field)}

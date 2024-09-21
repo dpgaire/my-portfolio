@@ -1,6 +1,6 @@
 const PageHeader = ({ title, content, email, footerDescription, children }) => {
   return (
-    <>
+    <div className="mt-4 lg:mt-0">
       <h1 className="text-4xl font-bold">{title}</h1>
       <div className="mt-2 flex flex-col gap-2 ">
         <p>
@@ -12,7 +12,7 @@ const PageHeader = ({ title, content, email, footerDescription, children }) => {
         <p>{footerDescription}</p>
         {children}
       </div>
-    </>
+    </div>
   );
 };
 

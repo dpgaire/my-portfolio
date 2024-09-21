@@ -12,7 +12,7 @@ export default function Home({ myInfo }) {
         />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
-      <section className="flex-center min-h-screen font-serif  bg-cover bg-intro-back">
+      <section className="flex-center min-h-screen font-serif">
         <Introduction myInfo={myInfo} />
       </section>
     </>
