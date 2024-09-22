@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbars />
-      <main className="font-poppins flex-1 min-w-0 lg:pl-64  overflow-auto bg-[#FAFAFA] px-2">
+      <main className="font-poppins flex-1 min-w-0 lg:pl-64  overflow-auto bg-[#FAFAFA]">
         {children}
       </main>
     </>
