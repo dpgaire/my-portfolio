@@ -2,7 +2,8 @@ import React from "react";
 import PageHeader from "./PageHeader";
 import { HEADER_CONTENT } from "@/data";
 import SocialLinks from "./SocialLinks";
-import { Card, SubmitButton } from "./ui";
+import { SubmitButton } from "./ui";
+import { BlogCard } from "./ui/cards";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 
@@ -20,15 +21,15 @@ const Blog = ({ blogs }) => {
           <SubmitButton text="Hire me" />
         </div>
       </PageHeader>
-      <div className="grid grid-cols-1  lg:grid-cols-3 gap-8 text-left">
-        {blogs.map((blog, index) => (
-          <Card
-            key={index}
-            image={blog.image}
+      <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogs.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            id={blog.id}
             title={blog.title}
+            date={blog.date}
             description={blog.description}
-            githubUrl={blog.githubUrl}
-            projectUrl={blog.projectUrl}
+            image={blog.image}
           />
         ))}
       </div>

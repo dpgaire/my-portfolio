@@ -1,4 +1,3 @@
-import Navbar from "../Navbar";
 import Navbars from "../Navbars";
 
 const Layout = ({ children }) => {
