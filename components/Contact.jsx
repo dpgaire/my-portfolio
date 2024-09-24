@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-4 text-[#4F4F4F] text-center max-w-5xl mx-auto">
+    <div className="py-12 text-[#4F4F4F] text-center max-w-5xl mx-auto">
       <PageHeader
         title="Contact me"
         content={content}
