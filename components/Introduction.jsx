@@ -1,49 +1,33 @@
-import { useEffect, useState } from 'react';
-import { LinkButton } from './ui/Button';
-import IntroSkeleton from './skeletons/Intro';
+"use client";
+import { useRouter } from "next/router";
+import { SubmitButton } from "./ui";
 
-
-const Introduction = () => {
-
-  const [profile, setProfile] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/intoduction')
-      .then((response) => response.json())
-      .then((data) => {
-        setProfile(data.myInfo);
-        setIsLoading(false); 
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setIsLoading(false); 
-      });
-  }, []); 
-
-  if (isLoading) {
-    return <section id="about" className="h-screen flex items-center justify-center bg-cover bg-center relative bg-intro-back"><IntroSkeleton/></section>;
-  }
-
+const Introduction = ({ myInfo }) => {
+  const router = useRouter();
   return (
-    <section id="about" className="lg:h-screen h-[90vh] flex items-center justify-center bg-cover bg-center relative bg-intro-back" >
-      <div className="text-center text-white z-10">
-        {/* Cube-like Structure (Profile Picture) */}
-        <div className="lg:w-32 lg:h-32 w-28 h-28 bg-[#7844E9] rounded-full mx-auto mb-4">
-        <img src={'/images/my-profile.png'} alt="Profile" className="w-full p-2 h-full rounded-full mx-auto mb-4" />
-        </div>
-        {/* Title and Subtitle */}
-        <h1 className="intro__heading">{profile.title}</h1>
-        <h2 className="lg:text-xl text-lg mb-2 font-bold font-serif">{profile.degination}</h2>
-        {/* Description */}
-        <p className="text-md mb-4 max-w-md mx-auto font-serif leading-7">{profile.description}</p>
-        {/* Call-to-action button */}
-        <LinkButton href={'#projects'} content="View Projects"/>
-        {/* <Link  href="#projects" className="bg-[#7844E9] text-white px-4 py-2 rounded-full hover:bg-[#7844e9df] transition duration-300">View Projects</Link> */}
+    <div
+      // className="text-center text-white z-10"
+      className=" font-poppins text-center  bg-white max-w-[992px] text-secondaryText mx-auto mb-4 p-2 lg:p-4 rounded-lg shadow-md w-full"
+    >
+      <div className="lg:w-32 lg:h-32 w-28 h-28 bg-primary rounded-full mx-auto mb-4">
+        <img
+          src={myInfo?.profile_image}
+          alt="Profile"
+          className="w-full p-2 h-full rounded-full mx-auto mb-4"
+        />
       </div>
-      {/* Overlay for background image */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-    </section>
+      <h1 className="intro__heading">{myInfo?.title}</h1>
+      <h2 className="lg:text-xl text-lg mb-2 font-bold font-serif">
+        {myInfo?.degination}
+      </h2>
+      <p className="text-md mb-4 max-w-md mx-auto font-serif leading-7">
+        {myInfo?.description}
+      </p>
+      <SubmitButton
+        text="View Projects"
+        onClick={() => router.push("/projects")}
+      />
+    </div>
   );
 };
 

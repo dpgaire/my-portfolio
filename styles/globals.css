@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* [#7844E9] */
 
 @layer base {
   html {
@@ -10,9 +9,18 @@
   }
 }
 
+
+.rc-anchor-alert{
+  display: none !important;
+}
+
 @layer components {
   .container {
     @apply mx-auto max-w-7xl;
+  }
+
+  .page_section{
+    @apply font-poppins pt-28 min-h-screen bg-intro-back bg-no-repeat bg-cover 
   }
 
   .flex-center {
@@ -20,28 +28,35 @@
   }
 
   .nav-links{
-    @apply text-white text-lg font-serif  hover:text-gray-300
+    @apply text-white text-lg font-poppins  hover:text-gray-300
+  }
+
+  .nav_bar_section{
+    @apply inline-flex items-center cursor-pointer space-x-2 text-primaryText hover:text-tersaryText transition-all ease-out 
+  }
+
+  .nav_bar_section.active {
+    @apply text-tersaryText;
   }
 
   .link_button{
-    @apply bg-[#7844E9] font-serif text-white px-4 py-2 rounded-full hover:bg-[#7844e9df] transition duration-300
+    @apply bg-primary font-poppins text-white px-4 py-2 rounded-full hover:bg-[#7844e9df] transition duration-300
   }
 
   .submit-button{
-    @apply bg-[#7844E9] lg:w-max w-full text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300
+    @apply bg-primary lg:w-max w-full text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300
   }
 
   .intro__heading {
     @apply lg:text-4xl text-2xl font-bold mb-2;
   }
+
   .main__heading{
     @apply text-2xl font-bold mb-4 text-white
   }
-  .main_section{
-    @apply bg-black pt-4 px-2 text-center lg:text-left lg:px-0 lg:pt-16 
-  }
-  .paragraph {
-    @apply text-lg  text-gray-700 text-justify;
+
+  .rc-anchor-alert{
+    @apply hidden
   }
 }
 
@@ -62,6 +77,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, #434190, #7f9cf5);
   }
+
 }
 
 

@@ -1,91 +1,37 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import PageHeader from "./PageHeader";
+import SocialLinks from "./SocialLinks";
+import { HEADER_CONTENT } from "@/data";
+import { Card, SubmitButton } from "./ui";
+import { ProjectCard } from "./ui/cards";
 
-const Projects = () => {
-  const [projects, setProjects] = useState([]);
+const { content, email, footerDescription } = HEADER_CONTENT;
 
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((response) => response.json())
-      .then((data) => setProjects(data.projects))
-      .catch((error) => console.error("Error fetching projects:", error));
-  }, []);
-
-  const trimTitle = (title, maxLength) => {
-    return title.length > maxLength
-      ? title.substring(0, maxLength) + "..."
-      : title;
-  };
-
+const Projects = ({ projects }) => {
   return (
-    <div id="projects" className="main_section">
-      <section className="container mx-auto mt-8">
-        <h2 className="main__heading">Projects</h2>
-        <div className="grid grid-cols-1  lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-2 lg:p-4 shadow-md"
-            >
-              {/* Project Image */}
-              {/* <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover mb-4 rounded-md"
-              /> */}
-
-              <video controls width="100%" height="300">
-                <source src={project.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              {/* Project Title and Description */}
-              <h2 className="text-lg font-semibold mb-2 font-sans">
-                {project.title}
-              </h2>
-              {/* <p className="text-gray-600 mb-4 font-serif">{trimTitle(project.description, 200)}</p> */}
-              <p className="text-gray-600 mb-4 font-serif">
-                {project.description}
-              </p>
-
-              {/* Icons for Viewing Project and GitHub Repository */}
-              <div className="flex justify-between">
-                {/* View Project Icon */}
-                <Link href={project.projectUrl}>
-                  <span className="text-black hover:text-blue-700">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      ></path>
-                    </svg>
-                  </span>
-                </Link>
-
-                {/* GitHub Icon */}
-                <Link href={project.githubUrl}>
-                  <span
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    <FaGithub className="text-xl cursor-pointer" />
-                  </span>
-                </Link>
-              </div>
-            </div>
-          ))}
+    <div className="py-12 text-[#4F4F4F] text-center max-w-5xl mx-auto">
+      <PageHeader
+        title="Projects"
+        content={content}
+        email={email}
+        footerDescription={footerDescription}
+      >
+        <SocialLinks />
+        <div className="inline-flex space-x-2 mx-auto py-2">
+          <SubmitButton text="Hire me" />
         </div>
-      </section>
+      </PageHeader>
+      <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 text-left">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            projectUrl={project.projectUrl}
+            githubUrl={project.githubUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 };
