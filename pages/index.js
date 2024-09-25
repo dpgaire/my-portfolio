@@ -20,7 +20,9 @@ export default function Home({ myInfo }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/intoduction"); // Replace with your API endpoint
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/intoduction`
+  );
   const { myInfo } = await res.json();
 
   return {

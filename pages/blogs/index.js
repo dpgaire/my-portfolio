@@ -3,7 +3,6 @@ import BlogComponent from "../../components/Blog";
 import Head from "next/head";
 
 export default function Blogs({ blogData }) {
-  console.log("blogData", blogData);
   return (
     <>
       <Head>
@@ -17,7 +16,8 @@ export default function Blogs({ blogData }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/blogs"); // Replace with your API endpoint
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs`);
+
   const { blogData } = await res.json();
   return {
     props: {

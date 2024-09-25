@@ -6,29 +6,23 @@ export default function Skills({ skills }) {
     <>
       <Head>
         <title>Skills</title>
-        <meta
-          name="description"
-          content={
-            "Lost's of skills"
-          }
-        />
+        <meta name="description" content={"Lost's of skills"} />
         <meta property="og:title" content={"Hi, I'm Durga Gairhe"} />
       </Head>
       <div className="page_section">
-        <SkillsComponent skills={skills}/>
+        <SkillsComponent skills={skills} />
       </div>
     </>
   );
 }
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/skills'); // Replace with your API endpoint
-    const { skills } = await res.json();
-  
-    return {
-      props: {
-        skills,
-      },
-    };
-  }
-  
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills`);
+  const { skills } = await res.json();
+
+  return {
+    props: {
+      skills,
+    },
+  };
+}
