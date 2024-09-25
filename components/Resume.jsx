@@ -10,7 +10,7 @@ import Link from "next/link";
 
 import { Modal, SubmitButton } from "./ui";
 
-const Resume = () => {
+const Resume = ({ resumeData }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const resumeRef = useRef(null); // Reference to the resume content
@@ -28,7 +28,7 @@ const Resume = () => {
       const imgWidth = 210; // A4 page width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
       pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-      pdf.save("Durga_Gairhe_Resume.pdf");
+      pdf.save("React_JS_Durga_Gairhe_Resume.pdf");
 
       // Restore original styles after PDF generation
       input.style.boxShadow = "";
@@ -115,51 +115,14 @@ const Resume = () => {
 
         {/* Work Experience Section */}
         <Section title="Work Experience">
-          <WorkExperience
-            title="Senior Front-end Developer (Scrum Master)"
-            company="Moru Digital Wallet"
-            duration="Dec 2022 - Present"
-            responsibilities={[
-              "Currently serving as a Senior Front-end Developer and Scrum Master.",
-              "Responsible for adding features and translating business requirements into technical specifications.",
-              "Leads the front-end team, ensuring that best practices are followed.",
-              "Takes on the role of scrum master, facilitating agile processes and ensuring smooth project management.",
-              "Acts as a bridge between the business team and the development team.",
-              "Assigns technical tasks to other developers, providing leadership in implementing solutions.",
-              "Streamlined the development process by introducing code reviews and setting up CI/CD pipelines.",
-              "Ensures timely delivery of key product features, coordinating with cross-functional teams.",
-            ]}
-          />
-          <WorkExperience
-            title="Frontend Developer"
-            company="Dibtech Pvt Limited"
-            duration="Jun 2022 - Dec 2022"
-            responsibilities={[
-              "Collaborated with the development team to discuss user interface ideas and applications.",
-              "Reviewed application requirements and interface designs.",
-              "Implemented highly responsive user interface components using React concepts.",
-              "Demonstrated strong communication and troubleshooting skills.",
-              "Developed and implemented front-end architecture to support user interface concepts.",
-              "Optimized application performance, reducing load times by 25%.",
-              "Worked with RESTful APIs and integrated them seamlessly into front-end components.",
-              "Participated in code reviews and pair programming sessions to enhance code quality.",
-            ]}
-          />
-          <WorkExperience
-            title="Junior Front-end Developer"
-            company="Phoenix Solution Pvt. Ltd"
-            duration="July 2021 - June 2022"
-            responsibilities={[
-              "Developed responsive web applications using React.js, HTML, and Bootstrap 5.",
-              "Collaborated closely with UI/UX designers, software developers, and QA resources.",
-              "Implemented new features and optimized existing code for improved performance.",
-              "Designed and developed pages and reusable components.",
-              "Gained experience in the complete front-end development process.",
-              "Learned the importance of accessibility and performance optimization in web development.",
-              "Participated in daily standups and sprint planning sessions.",
-              "Refined skills in JavaScript, CSS, and front-end development tools.",
-            ]}
-          />
+          {resumeData.map((item, index) => (
+            <WorkExperience
+              title={item.title}
+              company={item.campany}
+              duration={item.duration}
+              responsibilities={item.responsibilities}
+            />
+          ))}
         </Section>
 
         {/* Skills, Education & Languages */}

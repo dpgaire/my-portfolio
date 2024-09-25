@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const TextAreaField = ({
   placeholder,
@@ -32,16 +31,6 @@ const TextAreaField = ({
       {error && <p className="text-red-500 text-left text-sm">{error}</p>}
     </div>
   );
-};
-
-TextAreaField.propTypes = {
-  label: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func,
-  error: PropTypes.string,
 };
 
 export default TextAreaField;

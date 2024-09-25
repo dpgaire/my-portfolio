@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const InputField = ({
   type = "text",
@@ -30,17 +29,6 @@ const InputField = ({
       {error && <p className="text-red-500 text-sm text-left mt-1">{error}</p>}
     </div>
   );
-};
-
-InputField.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  onBlur: PropTypes.func,
-  error: PropTypes.string,
 };
 
 export default InputField;
