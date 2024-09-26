@@ -21,7 +21,7 @@ const Blog = ({ blogs }) => {
           <SubmitButton text="Hire me" />
         </div>
       </PageHeader>
-      <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:p-0 p-2">
         {blogs.map((blog) => (
           <BlogCard
             key={blog.id}

@@ -58,9 +58,11 @@ const Resume = ({ resumeData }) => {
 
   return (
     <div className="py-12 text-gray-800 text-center max-w-6xl mx-auto">
-      <h1 className="text-5xl font-extrabold mb-8">Online Resume</h1>
+      <h1 className="text-4xl lg:text-5xl font-extrabold my-8">
+        Online Resume
+      </h1>
 
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-6 p-2">
         <SubmitButton
           onClick={() => setModalOpen(true)}
           text="Download PDF Version"
@@ -103,7 +105,7 @@ const Resume = ({ resumeData }) => {
             src="/images/durga.png"
             alt="profile-image"
           />
-          <p className="flex-1 text-left text-lg">
+          <p className="flex-1 text-left text-base lg:text-lg">
             I’m a positive and eager-to-learn developer with a “do-it-yourself”
             approach to problem-solving. I thrive in fast-paced environments,
             constantly seeking out ways to improve my skills and add value to

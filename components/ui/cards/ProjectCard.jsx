@@ -9,7 +9,7 @@ export default function ProjectCard({
   githubUrl,
 }) {
   return (
-    <div className="max-w-sm  text-left rounded-lg overflow-hidden shadow-lg bg-white">
+    <div className="lg:max-w-sm  text-left rounded-lg overflow-hidden shadow-lg bg-white">
       <img
         className="w-full h-48 object-cover"
         src={image}

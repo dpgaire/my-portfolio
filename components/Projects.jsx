@@ -1,7 +1,7 @@
 import PageHeader from "./PageHeader";
 import SocialLinks from "./SocialLinks";
 import { HEADER_CONTENT } from "@/data";
-import { Card, SubmitButton } from "./ui";
+import { SubmitButton } from "./ui";
 import { ProjectCard } from "./ui/cards";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
@@ -20,7 +20,7 @@ const Projects = ({ projects }) => {
           <SubmitButton text="Hire me" />
         </div>
       </PageHeader>
-      <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 text-left">
+      <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 text-left md:p-0 p-2">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
