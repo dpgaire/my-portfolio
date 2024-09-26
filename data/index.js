@@ -1,13 +1,23 @@
 import {
   FaGithub,
-  FaUser,
+  FaExternalLinkAlt,
+  FaLinkedin,
+  FaBars,
+  FaTimes,
+  FaPhone,
+  FaGraduationCap,
+  FaSadCry,
   FaTools,
   FaLaptopCode,
   FaFileCode,
+  FaUser,
 } from "react-icons/fa";
+import { MdOutlineClose } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillMail } from "react-icons/ai";
+import { ImLocation } from "react-icons/im";
 import { BsLayoutTextSidebar } from "react-icons/bs";
 import { MdOutlineWeb, MdContactMail } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa6";
 
 const NAV_LINKS = [
   {
@@ -92,4 +102,27 @@ const formConfig = [
   },
 ];
 
-export { NAV_LINKS, SOCIAL_LINKS, HEADER_CONTENT, formConfig };
+export {
+  NAV_LINKS,
+  SOCIAL_LINKS,
+  HEADER_CONTENT,
+  formConfig,
+  FaGithub,
+  FaExternalLinkAlt,
+  FaLinkedin,
+  FaBars,
+  FaTimes,
+  FaPhone,
+  FaGraduationCap,
+  FaSadCry,
+  FaTools,
+  FaLaptopCode,
+  FaFileCode,
+  MdOutlineWeb,
+  MdContactMail,
+  BsLayoutTextSidebar,
+  ImLocation,
+  AiFillMail,
+  GiHamburgerMenu,
+  MdOutlineClose,
+};

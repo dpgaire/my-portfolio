@@ -1,7 +1,7 @@
 // pages/404.js
 
 import Link from "next/link";
-import { FaSadCry } from "react-icons/fa";
+import { FaSadCry } from "../data";
 
 const Custom404 = () => {
   return (
@@ -14,6 +14,7 @@ const Custom404 = () => {
       <Link
         className="mt-6 px-4 py-2 bg-white text-blue-500 rounded-lg hover:bg-gray-200 transition"
         href="/"
+        replace
       >
         Go back to Home
       </Link>
