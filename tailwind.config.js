@@ -54,6 +54,7 @@ module.exports = {
       },
       animation: {
         modalFadeIn: "modalFadeIn 0.3s ease-out forwards",
+        "spin-slow": "spin 12s linear infinite",
       },
     },
   },
