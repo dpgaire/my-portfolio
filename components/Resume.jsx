@@ -119,8 +119,9 @@ const Resume = ({ resumeData }) => {
         <Section title="Work Experience">
           {resumeData.map((item, index) => (
             <WorkExperience
+              key={index}
               title={item.title}
-              company={item.campany}
+              company={item.company}
               duration={item.duration}
               responsibilities={item.responsibilities}
             />
