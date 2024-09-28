@@ -17,7 +17,7 @@ const resumeData = [
   {
     company: "Dibtech Pvt Limited.",
     title: "Frontend Developer",
-    duration: "Jun 2022 - Dec 2020",
+    duration: "Jun 2022 - Dec 2022",
     responsibilities: [
       "Collaborated with the development team to discuss user interface ideas and applications.",
       "Reviewed application requirements and interface designs.",
