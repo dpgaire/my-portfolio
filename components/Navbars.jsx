@@ -27,8 +27,7 @@ const Navbars = () => {
   }, [isOpen]);
 
   return (
-    <React.Fragment className="relative">
-      {/* Mobile Navbar */}
+    <div className="relative">
       <header
         className={`lg:hidden fixed top-0 left-0 ${
           isOpen && "bottom-0"
@@ -150,7 +149,7 @@ const Navbars = () => {
           </div>
         </div>
       </header>
-    </React.Fragment>
+    </div>
   );
 };
 
