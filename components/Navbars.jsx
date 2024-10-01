@@ -75,7 +75,7 @@ const Navbars = () => {
 
       {/* Desktop Navbar */}
       <header
-        className={`fixed  h-full transition-all duration-300 ease-in-out ${
+        className={`hidden lg:flex flex-col fixed  h-full transition-all duration-300 ease-in-out ${
           isCollapsed ? "w-20" : "w-64"
         } font-poppins bg-secondaryText text-primaryText shadow-lg`}
       >
