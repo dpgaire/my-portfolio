@@ -23,7 +23,9 @@ module.exports = {
         primaryText: "#ECF0F1",
         secondaryText: "#4F4F4F",
         tersaryText: "#7844E9",
-        // 'secondaryText':'#7844E9',
+        brown: {
+          500: "#6B4423",
+        },
       },
       fontSize: {
         // Define your custom font sizes
@@ -51,10 +53,15 @@ module.exports = {
           "0%": { transform: "scale(0.9)", opacity: 0 },
           "100%": { transform: "scale(1)", opacity: 1 },
         },
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         modalFadeIn: "modalFadeIn 0.3s ease-out forwards",
         "spin-slow": "spin 12s linear infinite",
+        "rotate-axis": "rotate 4s linear infinite",
       },
     },
   },
