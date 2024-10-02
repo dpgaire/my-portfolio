@@ -1,4 +1,3 @@
-"use client";
 import {
   FaReact,
   FaCss3Alt,
@@ -8,7 +7,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaQrcode,
   FaUserCog,
   FaLinkedinIn,
   FaGithub,
@@ -27,123 +25,118 @@ const Introduction = ({ myInfo }) => {
   const router = useRouter();
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Rotating Icons */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {/* Wrapper for rotation */}
-        <div className="relative w-[700px] h-[700px]">
-          {/* Rotating Circle with evenly spaced icons */}
+        <div className="relative w-[700px] h-[700px] shadow-lg border">
           <div className="absolute w-full h-full animate-spin-slow rounded-full">
-            {/* Icon Wrapper */}
+            {/* Icons rotating around the card */}
             <FaReact
               className="absolute text-blue-500 text-4xl"
               style={{
-                top: "50%",
+                top: "20%",
                 left: "50%",
-                transform: "translate(-50%, -300px)",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiElectron
               className="absolute text-blue-700 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(250px, -150px)",
+                top: "30%",
+                left: "80%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiVisualstudiocode
               className="absolute text-blue-600 text-4xl"
               style={{
                 top: "50%",
-                left: "50%",
-                transform: "translate(250px, 150px)",
+                left: "90%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiNextdotjs
               className="absolute text-gray-900 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, 300px)",
+                top: "80%",
+                left: "75%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <FaCss3Alt
               className="absolute text-blue-600 text-4xl"
               style={{
-                top: "50%",
+                top: "90%",
                 left: "50%",
-                transform: "translate(-250px, 150px)",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <FaNodeJs
               className="absolute text-green-500 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-250px, -150px)",
+                top: "80%",
+                left: "25%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiPostman
               className="absolute text-orange-600 text-4xl"
               style={{
                 top: "50%",
-                left: "50%",
-                transform: "translate(50px, -250px)",
+                left: "10%",
+                transform: "translate(-50%, -50%)",
               }}
             />
-            {/* New Icons */}
             <FaPython
               className="absolute text-yellow-400 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-150px, -250px)",
+                top: "30%",
+                left: "20%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <FaTerminal
               className="absolute text-gray-600 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(150px, -250px)",
+                top: "30%",
+                left: "70%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiRedux
               className="absolute text-purple-600 text-4xl"
               style={{
                 top: "50%",
-                left: "50%",
-                transform: "translate(250px, -50px)",
+                left: "70%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <SiMongodb
               className="absolute text-green-600 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(150px, 250px)",
+                top: "70%",
+                left: "80%",
+                transform: "translate(-50%, -50%)",
               }}
             />
             <FaUserCog
               className="absolute text-red-500 text-4xl"
               style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-150px, 250px)",
+                top: "70%",
+                left: "30%",
+                transform: "translate(-50%, -50%)",
               }}
             />
           </div>
         </div>
       </div>
 
-      {/* Identity Card */}
-      <div className="relative bg-white max-w-[400px] w-full mx-auto p-6 rounded-xl shadow-xl border-2 border-gray-300 overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 z-10">
-        {/* Top Section for Logo */}
-        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-gray-400 to-brown-500 text-white flex items-center justify-center">
+      {/* Identity Card as the "Sun" */}
+      <div className="relative bg-black text-white max-w-[400px] w-full mx-auto p-6 rounded-xl shadow-2xl border-4 border-gray-300 transform lg:rotate-[15deg] transition-transform duration-500 ease-out hover:scale-110 hover:rotate-0 z-10">
+        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-gray-400 to-gray-700 text-white flex items-center justify-center">
           <span className="font-bold">Durga Gairhe</span>
         </div>
 
-        {/* Profile Picture */}
         <div className="w-20 h-24 mx-auto mt-16 mb-4 rounded-md overflow-hidden shadow-md border-2 border-gray-300">
           <img
             src={myInfo?.profile_image}
@@ -152,35 +145,32 @@ const Introduction = ({ myInfo }) => {
           />
         </div>
 
-        {/* Name and Designation */}
-        <h1 className="text-lg font-semibold text-gray-800">{myInfo?.title}</h1>
-        <h2 className="text-sm font-medium text-gray-600 mb-2">
+        <h1 className="text-lg font-semibold text-center">{myInfo?.title}</h1>
+        <h2 className="text-sm font-medium mb-2 text-center">
           {myInfo?.degination}
         </h2>
 
-        {/* Contact Information */}
-        <div className="text-sm text-gray-600 mb-4 flex flex-col items-center justify-start">
-          <p className="flex items-center justify-center mb-1">
-            <FaPhone className="mr-2" /> {myInfo?.phone || "+9779846724440"}
+        <div className="text-sm mb-4 flex flex-col items-center">
+          <p className="flex items-center justify-start mb-1">
+            <FaPhone className="mr-2" />
+            <span>{myInfo?.phone || "+9779846724440"}</span>
           </p>
-          <p className="flex items-center justify-center mb-1">
+          <p className="flex items-center mb-1">
             <FaEnvelope className="mr-2" />{" "}
             {myInfo?.email || "email@example.com"}
           </p>
-          <p className="flex items-center justify-center">
+          <p className="flex items-center">
             <FaMapMarkerAlt className="mr-2" />{" "}
             {myInfo?.location || "Kathmandu, Nepal"}
           </p>
         </div>
 
-        {/* QR Code Placeholder */}
         <div className="flex justify-center items-center mt-4 gap-2">
-          <FaLinkedinIn className="text-xl text-gray-500" />
-          <FaGithub className="text-xl text-gray-500" />
+          <FaLinkedinIn className="text-xl cursor-pointer" />
+          <FaGithub className="text-xl cursor-pointer" />
         </div>
 
-        {/* Bottom Curved Background for the Style */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-400 to-brown-500"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-400 to-gray-700"></div> */}
       </div>
     </div>
   );
