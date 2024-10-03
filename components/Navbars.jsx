@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { FaAngleLeft, FaAngleRight, FaBars, FaTimes } from "react-icons/fa"; // Importing hamburger and close icons
+import { FaAngleLeft, FaAngleRight, FaBars, FaTimes } from "react-icons/fa";
 import SocialLinks from "./SocialLinks";
 import { NAV_LINKS } from "@/data";
 import React from "react";
 
 const Navbars = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false); // State for mobile navbar
+  const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleNavbarDesktop = () => {
@@ -19,11 +19,7 @@ const Navbars = () => {
   };
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
   return (
@@ -57,7 +53,7 @@ const Navbars = () => {
                 <div
                   onClick={() => {
                     router.push(`${section.path}`);
-                    setIsOpen(false); // Close the menu after selecting a link
+                    setIsOpen(false);
                   }}
                   key={index}
                   className={`nav_bar_section mt-1 border border-transparent px-4 py-2 rounded hover:bg-primary hover:text-white ${
@@ -73,26 +69,24 @@ const Navbars = () => {
         )}
       </header>
 
-      {/* Desktop Navbar */}
       <header
-        className={`hidden lg:flex flex-col fixed  h-full transition-all duration-300 ease-in-out ${
+        className={`hidden lg:flex flex-col fixed h-full transition-all duration-300 ease-in-out ${
           isCollapsed ? "w-20" : "w-64"
         } font-poppins bg-secondaryText text-primaryText shadow-lg`}
       >
         <h1
           className={`${
-            isCollapsed ? "hidden" : "block "
+            isCollapsed ? "hidden" : "block"
           } text-3xl font-bold pt-4 text-center mb-2`}
         >
           Durga Gairhe
         </h1>
         <button
           onClick={toggleNavbarDesktop}
-          className="absolute top-1/2 right-[-10px] shadow-lg border  transform -translate-y-1/2 bg-secondaryText text-primaryText rounded-full p-2"
+          className="absolute top-1/2 right-[-10px] shadow-lg border transform -translate-y-1/2 bg-secondaryText text-primaryText rounded-full p-2 z-10"
         >
           {isCollapsed ? <FaAngleRight /> : <FaAngleLeft />}
         </button>
-        {/* </div> */}
         <div className="text-center">
           <div
             className={`w-28 h-28 bg-gray-400 rounded-full mx-auto mb-4 ${
@@ -130,7 +124,7 @@ const Navbars = () => {
               <div
                 onClick={() => router.push(`${section.path}`)}
                 key={index}
-                className={`nav_bar_section mt-1 border border-transparent px-4 py-2 rounded hover:bg-primary hover:text-white ${
+                className={`nav_bar_section relative mt-1 border border-transparent px-4 py-2 rounded hover:bg-primary hover:text-white ${
                   router.pathname === `${section.path}` ? "active" : ""
                 }`}
               >
@@ -144,6 +138,11 @@ const Navbars = () => {
                     {section.title}
                   </span>
                 </span>
+                {isCollapsed && (
+                  <span className="absolute left-12 top-1/2 transform -translate-y-1/2 whitespace-nowrap bg-secondaryText text-primaryText p-1 rounded opacity-0 hover:opacity-100 transition-opacity duration-200">
+                    {section.title}
+                  </span>
+                )}
               </div>
             ))}
           </div>
