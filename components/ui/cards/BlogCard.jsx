@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function BlogCard({ id, title, date, description, image }) {
   return (
     <div className="lg:max-w-sm text-left rounded-lg overflow-hidden shadow-lg bg-white">
-      <img className="w-full h-48 object-cover" src={image} alt="Blog Image" />
+      {/* <img className="w-full h-48 object-cover" src={image} alt="Blog Image" /> */}
       <div className="mt-2 p-6">
         <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
         <p className="text-sm text-gray-600 mb-4">
