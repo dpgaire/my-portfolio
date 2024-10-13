@@ -5,6 +5,7 @@ import SocialLinks from "./SocialLinks";
 import { SubmitButton } from "./ui";
 import { BlogCard } from "./ui/cards";
 import BlogLists from "./skeletons/BlogLists";
+import Link from "next/link";
 
 const { content, email, footerDescription } = HEADER_CONTENT;
 
@@ -19,7 +20,9 @@ const Blog = ({ blogs }) => {
       >
         <SocialLinks />
         <div className="inline-flex space-x-2 mx-auto py-2">
-          <SubmitButton text="Hire me" />
+          <Link href="/contact" replace>
+            <SubmitButton text="Hire me" />
+          </Link>
         </div>
       </PageHeader>
       <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:p-0 p-2">
