@@ -1,11 +1,11 @@
 const projects = [
   {
-    title: "E-commerce Website",
+    title: "Code Log",
     description:
-      "A full-stack e-commerce platform offering secure transactions and dynamic product listings.",
-    image: "/images/background.png",
-    projectUrl: "https://example.com/ecommerce",
-    githubUrl: "https://github.com/example/ecommerce",
+      "A React app for logging and managing code snippets with syntax highlighting, allowing users to easily add, edit, and delete entries",
+    image: "/images/code-log.jpg",
+    projectUrl: "https://code-log-dp.vercel.app/",
+    githubUrl: "https://github.com/dpgaire/code-log",
   },
   {
     title: "Social Media App",
