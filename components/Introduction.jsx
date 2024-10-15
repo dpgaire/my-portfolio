@@ -19,11 +19,9 @@ import {
   SiRedux,
   SiMongodb,
 } from "react-icons/si";
-import { useRouter } from "next/router";
+import SocialLinks from "./SocialLinks";
 
 const Introduction = ({ myInfo }) => {
-  const router = useRouter();
-
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Rotating Icons */}
@@ -132,7 +130,7 @@ const Introduction = ({ myInfo }) => {
       </div>
 
       {/* Identity Card as the "Sun" */}
-      <div className="relative bg-black text-white max-w-[400px] w-full mx-auto p-6 rounded-xl shadow-2xl border-4 border-gray-300 transform lg:rotate-[15deg] transition-transform duration-500 ease-out hover:scale-110 hover:rotate-0 z-10">
+      <div className="relative bg-black text-white max-w-[370px] w-full mx-auto p-6 transform lg:rotate-[15deg] transition-transform duration-500 ease-out hover:scale-110 hover:rotate-0 z-10">
         <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-gray-400 to-gray-700 text-white flex items-center justify-center">
           <span className="font-bold">Durga Gairhe</span>
         </div>
@@ -152,25 +150,33 @@ const Introduction = ({ myInfo }) => {
 
         <div className="text-sm mb-4 flex flex-col items-center">
           <p className="flex items-center justify-start mb-1">
-            <FaPhone className="mr-2" />
-            <span>{myInfo?.phone || "+9779846724440"}</span>
+            <a
+              href={`tel:${myInfo?.phone || "+9779846724440"}`}
+              className="flex items-center"
+            >
+              <FaPhone className="mr-2" />
+              <span>{myInfo?.phone || "+9779846724440"}</span>
+            </a>
           </p>
           <p className="flex items-center mb-1">
-            <FaEnvelope className="mr-2" />{" "}
-            {myInfo?.email || "email@example.com"}
+            <a
+              href={`mailto:${myInfo?.email || "gairhedurga13@gmail.com"}`}
+              target="_blank"
+              className="flex items-center"
+            >
+              <FaEnvelope className="mr-2" />
+              <span>{myInfo?.email || "gairhedurga13@gmail.com"}</span>
+            </a>
           </p>
+
           <p className="flex items-center">
             <FaMapMarkerAlt className="mr-2" />{" "}
             {myInfo?.location || "Kathmandu, Nepal"}
           </p>
         </div>
-
         <div className="flex justify-center items-center mt-4 gap-2">
-          <FaLinkedinIn className="text-xl cursor-pointer" />
-          <FaGithub className="text-xl cursor-pointer" />
+          <SocialLinks />
         </div>
-
-        {/* <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-400 to-gray-700"></div> */}
       </div>
     </div>
   );
