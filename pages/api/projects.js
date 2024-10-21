@@ -8,36 +8,13 @@ const projects = [
     githubUrl: "https://github.com/dpgaire/code-log",
   },
   {
-    title: "Social Media App",
+    title: "Code Vulnerability Scanner",
     description:
-      "A social platform for connecting users, sharing media, and building communities with real-time chat.",
-    image: "/images/background.png",
-    projectUrl: "https://example.com/socialmedia",
-    githubUrl: "https://github.com/example/socialmedia",
-  },
-  {
-    title: "Task Manager App",
-    description:
-      "A productivity application designed to help users track tasks, set reminders, and boost efficiency.",
-    image: "/images/background.png",
-    projectUrl: "https://example.com/taskmanager",
-    githubUrl: "https://github.com/example/taskmanager",
-  },
-  {
-    title: "Fitness Tracker",
-    description:
-      "An app to monitor workouts, track progress, and suggest personalized training routines based on data.",
-    image: "/images/background.png",
-    projectUrl: "https://example.com/fitnesstracker",
-    githubUrl: "https://github.com/example/fitnesstracker",
-  },
-  {
-    title: "Recipe Finder",
-    description:
-      "A culinary platform allowing users to find recipes based on ingredients, diet, and cuisine preferences.",
-    image: "/images/background.png",
-    projectUrl: "https://example.com/recipefinder",
-    githubUrl: "https://github.com/example/recipefinder",
+      "The Vulnerability Scanner for Visual Studio Code detects security threats in JavaScript code, enhancing your codebase's overall safety and integrity.",
+    image: "/images/vulnerability-scanner.jpg",
+    projectUrl:
+      "https://marketplace.visualstudio.com/items?itemName=DurgaGairhe.vulnerability-scanner",
+    githubUrl: "https://github.com/dpgaire/vulnerability-scanner",
   },
 ];
 
