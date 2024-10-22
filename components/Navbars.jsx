@@ -30,14 +30,16 @@ const Navbars = () => {
         } w-full bg-secondaryText text-primaryText z-50 shadow-md`}
       >
         <div className="flex justify-between items-center p-4">
-          <h1 className="text-xl font-bold">Durga Gairhe</h1>
+          <h1 className="text-xl font-bold" onClick={() => router.push(`/`)}>
+            Durga Gairhe
+          </h1>
           <button onClick={toggleNavbar} aria-label="Toggle Navigation">
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
         {isOpen && (
           <div className="flex flex-col items-center bg-secondaryText transition-all duration-300 ease-in-out">
-            <div className="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-2">
+            <div className="w-28 h-28 bg-gray-400 rounded-full mx-auto mb-2">
               <img
                 src={"/images/durga.png"}
                 alt="Profile"
@@ -48,7 +50,7 @@ const Navbars = () => {
               Hi, I'm Durga Gairhe, a senior software engineer. Welcome!
             </span>
             <SocialLinks />
-            <div className="flex flex-col items-start mt-2">
+            <div className="flex flex-col items-start gap-2 mt-2">
               {NAV_LINKS.map((section, index) => (
                 <div
                   onClick={() => {
