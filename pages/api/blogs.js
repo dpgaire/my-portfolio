@@ -1,10 +1,11 @@
 const blogData = [
   {
     id: 1,
-    title: "Learn Microinteraction",
-    date: new Date("2020-01-20"),
+    title: "How the Web Works for Developers",
+    date: new Date("2024-10-24"),
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis viverra turpis.",
+      "This blog provides a clear and simple explanation of how the web works for developers, breaking down the main components and how they interact to create functional websites. Here’s a closer look at frontend, backend, and database with real-life examples.",
+    metadescription: `This is for short description`,
     image: "/images/background.png",
   },
   {
