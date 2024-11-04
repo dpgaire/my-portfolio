@@ -28,11 +28,13 @@ export default function BlogDetail({ blog }) {
         </div>
 
         {/* Blog Image */}
-        <img
-          className="w-full h-64 object-cover rounded-lg mb-6"
-          src={blog.image}
-          alt="Blog"
-        />
+        <div className="h-full w-full mb-6">
+          <img
+            className="w-full h-full object-contain rounded-lg"
+            src={blog.image}
+            alt="Blog"
+          />
+        </div>
 
         {/* Blog Title */}
         <h1 className="text-3xl font-bold text-gray-900 mb-6">{blog.title}</h1>
