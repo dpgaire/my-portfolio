@@ -35,7 +35,7 @@ const Blog = ({ blogs }) => {
             id={blog.id}
             title={blog.title}
             date={blog.date}
-            description={blog.description}
+            description={blog.metaDescription}
             image={blog.image}
           />
         ))}
