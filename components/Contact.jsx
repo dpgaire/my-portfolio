@@ -20,11 +20,9 @@ const Contact = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "API-key": process.env.DATA_API_KEY,
         },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         setSubmitSuccess(true);
 
